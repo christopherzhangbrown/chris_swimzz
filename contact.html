@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CHRIS-SWIMZZ-CONTACT</title>
+        <link rel="icon" type="image/png" href="images/logos/logowhiteimg.png"> 
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/dd8f3b3ec9.js" crossorigin="anonymous"></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Contact Form</title>
+        <!-- Form styling -->
+        <link rel="stylesheet" href="formcarry-form.css" />
+    </head>
+    <body>
+        <div id="header"></div>
+        <script>
+            fetch("header.html")
+                .then(response => response.text())
+                .then(data => document.getElementById("header").innerHTML = data)
+                .catch(error => console.error("Error loading header:", error));
+        </script>
+        <div class="header-line"></div>
+        
+        <h1>CHRIS</h1>
+        <h2>SWIMZZ</h2>
+
+        <div id ="contact-header">
+            <h1>
+                Contact Me
+            </h1>
+        </div>
+        <h1>
+            Contact Me
+        </h1>
+        <p>
+            Please reach out to me through my email chrisswimzzinquiries@gmail.com.
+        </p>
+
+
+  
+        <div class="formcarry-container">
+            <form action="https://formcarry.com/s/xVkQsobtWw4" method="POST" class="formcarry-form">
+                <input type="hidden" name="_next" value="https://google.com">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="fullName" required />
+
+                <label for="email">Your Email Address</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="message">Your Message</label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <div id="footer"></div>
+        <script>
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => document.getElementById("footer").innerHTML = data)
+                .catch(error => console.error("Error loading footer:", error));
+        </script>
+        
+    </body>
+</html>

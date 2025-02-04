@@ -1,0 +1,284 @@
+@font-face{
+    src: url(fonts/Plus_Jakarta_Sans/);
+    font-family: Jakarta;
+}
+@font-face{
+    src: url(fonts/Gotham-Medium.otf);
+    font-family: Gotham;
+}
+    
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center; /* Vertically center the logo and navbar */
+    justify-content: space-between; /* Space out the logo and navbar */
+    padding: 10px 20px; /* Add some padding */
+    background-color: #ffffff;
+    font-family: Gotham, Jakarta, sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.header-line {
+    position: fixed;
+    height: 90px; /* Set the height of the line */
+    background-color: black; /* Set the color of the line */
+    width: 100%; /* Make the line span the full width */
+    margin: 0; /* Remove default margin */
+    z-index: 999; /* Ensure the line appears below the header */
+}
+
+.logoheader {
+    flex: 0 0 auto; /* Prevent the logo from growing or shrinking */
+}
+
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0px 60px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end; /* Align the navigation items to the right */
+    gap: 25px; /* Add space between navigation items */
+}
+
+.navbar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    text-align: center;
+}
+
+.navbar a:hover {
+    color: #0057B8;
+}
+main {
+    padding-top: 75px; /* Adjust this value to match the height of your header */
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f5f5; /* Optional: Add a background color */
+    border-radius: 0px; /* Optional: Add rounded corners */
+    
+}
+
+.intro-text {
+    flex: 1;
+    text-align: center;
+    font-family: Gotham, Jakarta, sans-serif;
+
+}
+
+.intro-text h1 {
+    margin: 0;
+    font-size: 130px; /* Adjust font size as needed */
+    line-height: .8; /* Adjust line height for better spacing */
+}
+.intro-text h2 {
+    margin: 0;
+    font-size: 90px; /* Adjust font size as needed */
+    line-height: 1.5; /* Adjust line height for better spacing */
+}
+
+
+.intro-text h5 {
+    
+    margin: 20px 20px 0;
+    font-size: 18px; /* Adjust font size as needed */
+    color: #000000; /* Optional: Adjust text color */
+    font-weight: normal;
+}
+
+.intro-image {
+    flex: 0 0 auto;
+}
+
+.intro-image img {
+    max-width: 100%;
+    height: 400px;
+    border-radius: 1px; /* Optional: Add rounded corners */
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 40px;
+}
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column; /* Stack text and image vertically */
+        text-align: center; /* Center-align the text */
+    }
+
+    .intro-image img {
+        max-width: 80%; /* Reduce image size on smaller screens */
+        text-align: center;
+    }
+}
+
+.contact-header{
+    font-family: Gotham, Jakarta, sans-serif;
+    text-align: center;
+}
+.aboutMe {
+    background-color: #000000; /* Black background */
+    font-family: Gotham, Jakarta, sans-serif; /* Font family */
+    text-align: center; /* Center-align the heading */
+    color: #f5f5f5; /* Light text color */
+    padding: 10px 50px 70px 50px; /* Padding: top, right, bottom, left */
+}
+
+.aboutMe h1 {
+    font-size: 60px; /* Large font size for the heading */
+    margin-bottom: 20px; /* Add space below the heading */
+}
+
+.aboutMe-content {
+    display: flex; /* Use Flexbox for layout */
+    align-items: center; /* Vertically center the text and image */
+    gap: 50px; /* Add space between the text and image */
+}
+
+.aboutMe-content p {
+    flex: 1; /* Allow the text to take up remaining space */
+    text-align: left; /* Align the text to the left */
+    color: #f5f5f5; /* Light text color */
+    font-size: 25px;
+    margin: 0;
+}
+
+.aboutMe-content img {
+    flex: 0 0 auto; /* Prevent the image from growing or shrinking */
+    height: 400px; /* Set the height of the image */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+.videos {
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.videos h1 {
+    font-family: Gotham, Jakarta, sans-serif;
+    font-size: 60px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.video-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.video-item img {
+    height: 500px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.video-item img:hover {
+    transform: scale(1.05);
+}
+
+.video-title {
+    font-family: Gotham, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+}
+.video-title img:hover{
+    transform:  scale(1.05)
+}
+
+
+body{
+    background-color: #f5f5f5;
+    color: rgb(2, 2, 2);
+}
+
+footer {
+    margin-top: auto;
+    background-color: black;
+    height: 200px;
+    color: #f5f5f5;
+    display: flex;
+    justify-content: space-between; /* Left & right alignment */
+    align-items: center; /* Vertical centering */
+    padding: 20px 50px;
+    position: relative;
+}
+
+/* Left-aligned text */
+.rightsreserved {
+    font-family: Jakarta, sans-serif;
+    text-align: left;
+    flex: 1; /* Makes it take equal space */
+    
+}
+
+/* Centered logo */
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centers within its section */
+}
+
+/* Right-aligned icons */
+.icons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icons a {
+    text-decoration: none;
+    margin-left: 25px; /* Spacing between icons */
+    color: #f5f5f5;
+}
+.fa-brands.fa-instagram.fa-2xl {
+    color: hsl(0, 0%, 100%);
+}
+.fa-brands.fa-instagram.fa-2xl:hover {
+    color: hsl(0, 0%, 75%);
+}
+.fa-brands.fa-youtube.fa-2xl {
+    color: hsl(0, 0%, 100%);
+}
+.fa-brands.fa-youtube.fa-2xl:hover {
+    color: hsl(0, 0%, 75%);
+}
+.fa-brands.fa-tiktok.fa-2xl {
+    color: hsl(0, 0%, 100%);
+}
+.fa-brands.fa-tiktok.fa-2xl:hover {
+    color: hsl(0, 0%, 75%);
+}
+.fa-brands.fa-facebook.fa-2xl {
+    color: hsl(0, 0%, 100%);
+}
+.fa-brands.fa-facebook.fa-2xl:hover {
+    color: hsl(0, 0%, 75%);
+}
