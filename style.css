@@ -23,13 +23,24 @@ header {
     font-size: 20px;
     font-weight: bolder;
 }
-.header-line {
+.header-line-home {
     position: fixed;
     height: 90px; /* Set the height of the line */
     background-color: black; /* Set the color of the line */
     width: 100%; /* Make the line span the full width */
     margin: 0; /* Remove default margin */
     z-index: 999; /* Ensure the line appears below the header */
+    margin-top: 0px;
+}
+
+.header-line {
+    position: fixed;
+    height: 75px; /* Set the height of the line */
+    background-color: black; /* Set the color of the line */
+    width: 100%; /* Make the line span the full width */
+    margin: 0; /* Remove default margin */
+    z-index: 999; /* Ensure the line appears below the header */
+    margin-top: 0px;
 }
 
 .logoheader {
@@ -80,17 +91,19 @@ html, body {
     flex: 1;
     text-align: center;
     font-family: Gotham, Jakarta, sans-serif;
-
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
+    transform: translateX(-100px); /* Initially positioned to the left */
 }
 
 .intro-text h1 {
     margin: 0;
-    font-size: 130px; /* Adjust font size as needed */
+    font-size: 130px;
     line-height: .8; /* Adjust line height for better spacing */
 }
 .intro-text h2 {
     margin: 0;
-    font-size: 90px; /* Adjust font size as needed */
+    font-size: 90px; 
     line-height: 1.5; /* Adjust line height for better spacing */
 }
 
@@ -105,6 +118,10 @@ html, body {
 
 .intro-image {
     flex: 0 0 auto;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
+    transform: translateX(100px); /* Initially positioned to the right */
+
 }
 
 .intro-image img {
@@ -113,7 +130,11 @@ html, body {
     border-radius: 1px; /* Optional: Add rounded corners */
     padding-top: 40px;
     padding-bottom: 40px;
-    padding-right: 40px;
+    padding-right: 60px;
+}
+.intro-text.visible, .intro-image.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateX(0); /* Move to the original position */
 }
 @media (max-width: 768px) {
     .intro {
@@ -135,22 +156,66 @@ html, body {
     background-color: #000000; /* Black background */
     font-family: Gotham, Jakarta, sans-serif; /* Font family */
     text-align: center; /* Center-align the heading */
-    color: #f5f5f5; /* Light text color */
+    color: #ffffff; /* Light text color */
     padding: 10px 50px 70px 50px; /* Padding: top, right, bottom, left */
 }
 
 .aboutMe h1 {
     font-size: 60px; /* Large font size for the heading */
     margin-bottom: 20px; /* Add space below the heading */
+    color: white;
+    opacity: 0; /* Initially hidden */
+    transform: translatex(-100px); /* Initially positioned to the left */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+
+.aboutMe h1.visible{
+    opacity: 1; /* Fully visible */
+    transform: translateX(0); /* Move to the original position */
+}
+.aboutMe a {
+    text-decoration: none; /* Remove underline from links */
+}
+.aboutMe a :hover{
+    color: #86bcfa; /* Change color on hover */
 }
 
 .aboutMe-content {
     display: flex; /* Use Flexbox for layout */
     align-items: center; /* Vertically center the text and image */
-    gap: 50px; /* Add space between the text and image */
+    gap: 100px; /* Increase the space between the text and image */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(100px); /* Initially positioned to the left */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+.aboutMe-content.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to the original position */
 }
 
-.aboutMe-content p {
+.aboutMe-content aside {
+    flex: 0 0 auto; /* Prevent the aside from growing or shrinking */
+}
+.aboutMe-right a{
+    text-decoration: underline;
+    color: #f5f5f5;
+}
+.aboutMe-right a:hover{
+    color: #86bcfa;
+}
+
+
+.aboutMe-right {
+    flex: 1; /* Allow the text to take up remaining space */
+    text-align: left; /* Align the text to the left */
+    color: #f5f5f5; /* Light text color */
+    font-size: 25px;
+    margin: 0;
+    padding-left: 100px; /* Add padding to the left of the text */
+    padding-right: 100px; /* Add padding to the right of the text */
+}
+
+.aboutMe-paragraph {
     flex: 1; /* Allow the text to take up remaining space */
     text-align: left; /* Align the text to the left */
     color: #f5f5f5; /* Light text color */
@@ -161,8 +226,62 @@ html, body {
 .aboutMe-content img {
     flex: 0 0 auto; /* Prevent the image from growing or shrinking */
     height: 400px; /* Set the height of the image */
-    border-radius: 10px; /* Optional: Add rounded corners */
+    padding-left:100px; /* Add space to the left of the image */
 }
+
+aside {
+    width: 20%;
+    float: left;
+}
+
+.aboutMe-boxes{
+    display: flex; /* Use Flexbox for layout */
+    justify-content: flex-start;
+    margin-left: auto;
+    padding-right: 0px;
+    padding-top: 30px;
+    text-align: center;
+
+}
+
+.aboutMe-box {
+    position: relative; /* Required for positioning the pseudo-element */
+    background-color: #1f1f1f; /* White background */
+    padding: 20px; /* Padding inside the box */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for depth */
+    text-align: center; /* Center-align the text */
+    max-width: 50%; /* Set a maximum width for the boxes */
+    border: 1px solid #ffffff;
+    flex: 1; /* Allow the boxes to take up equal space */
+    overflow: hidden; /* Hide overflowing content */
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    
+
+}
+.aboutMe-box::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position the pseudo-element */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3a3b3c; /* Hover background color */
+    z-index: -1; /* Place the pseudo-element behind the content */
+    transform: scaleY(0); /* Initially scale the pseudo-element to 0 */
+    transform-origin: bottom; /* Scale from the bottom */
+    transition: transform 0.3s ease; /* Smooth transition for the transform */
+}
+.aboutMe-box:hover::before {
+    transform: scaleY(1); /* Scale the pseudo-element to 1 on hover */
+}
+
+.aboutMe-box:hover {
+    z-index: 10;
+    transform: scale(1.06); /* Expand the box on hover */
+    border-color: transparent; /* Make the border transparent on hover */
+}
+
+
 .videos {
     background-color: #f5f5f5;
     display: flex;
@@ -176,7 +295,14 @@ html, body {
     font-size: 60px;
     text-align: center;
     color: rgb(0, 0, 0);
-    margin-bottom: 20px;
+    margin-bottom: 60px;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(100px); /* Initially positioned to the right */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+.videos h1.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateX(0); /* Move to the original position */
 }
 
 .video-container {
@@ -191,6 +317,13 @@ html, body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(100px); /* Initially positioned below */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+.video-item.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to the original position */
 }
 
 .video-item img {
@@ -213,6 +346,26 @@ html, body {
     transform:  scale(1.05)
 }
 
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+    gap: 40px; /* Add space between the grid items */
+    padding: 40px; /* Add padding around the grid */
+    
+}
+
+.sponsor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5; /* Optional: Add a background color */
+}
+
+.sponsor img {
+    max-width: 100%; /* Ensure the image fits within the container */
+    max-height: 500px;
+    height: auto; /* Maintain the aspect ratio */
+}
 
 body{
     background-color: #f5f5f5;

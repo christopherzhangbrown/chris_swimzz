@@ -18,15 +18,13 @@
                 .then(data => document.getElementById("header").innerHTML = data)
                 .catch(error => console.error("Error loading header:", error));
         </script>
-        <div class="header-line"></div>
+        <div class="header-line-home"></div>
         <main>
             <div class="intro">
                 <div class="intro-text">
                     <h1>CHRIS</h1>
                     <h2>SWIMZZ</h2>
-                    <h5>I am a D1 swimmer and content creator at
-                        Brown University, sharing my swimming journey
-                        and inspiring the next generation of swimmers.</h5>
+                    <h5>Student-Athlete | Content Creator | Coach</h5>
                 </div>
                 <div class="intro-image">
                     <img src="images/blackwhitebrownborder.png" alt="Chris Swimzz">
@@ -34,36 +32,55 @@
             </div>
 
             <div class="aboutMe">
-                <h1>ABOUT ME</h1>
+                <a href="about.html"><h1>ABOUT ME</h1></a>
                 <div class="aboutMe-content">
-                    <img src="/images/medalpicoutlined.png">
-                    <p>
-                        Hey, I'm Christopher Zhang, a current Division 1 swimmer for Brown University studying both Computer Science and Economics.
-                        I've been swimming for over 12 years and I want to share my passion for swimming with others.
-                        Originally from Charlotte NC, I swam for the club team of Lifetime Swim and highschool of Ardrey Kell before competing at the collegiate level.
-                        My main events include the sprint freestyle and butterfly — 50 free, 100 free, 200 free, and 100 fly.
-                        With a growing community of 12,000+ followers on Instagram (@chris_swimzz), I share training insights, racing tips, and exclusive content to inspire the next generation of swimmers.    
+                    <aside>
+                        <img src="/images/medalpicoutlined.png">
+                    </aside>
+                    <div class="aboutMe-right">
+                        <div class="aboutMe-paragraph">
+                            <p>
+                                I am a content creator, coach, and D1 Swimmer at
+                                Brown University, sharing my swimming journey
+                                and inspiring the next generation of swimmers.
+                                Learn more about me <a href="about.html">here</a>. 
+                            </p>
+                        </div>
+                        <div class="aboutMe-boxes">
+                            <div class="aboutMe-box">
+                                <p>❤️<br><br>16k + Followers on All Platforms</p>
+                            </div>
+                            <div class="aboutMe-box">
+                                <p>🐻<br><br>School Record Holder</p>
+                            </div>
+                            <div class="aboutMe-box">
+                                <p>🌊<br><br>Head Coach for the Waves </p>
+                            </div>
+                        </div>
+                    </div>
                         
-                    </p>
                 </div>
+                
+            </div>
+               
             </div>
             <div class="videos">
                 <h1>POPULAR VIDEO SERIES</h1>
                 <div class="video-container">
                     <div class="video-item">
-                        <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM1MDM4NTY4MDExMDk1?igsh=MXR4MnRnODl6d3Rvcw==">
+                        <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM1MDM4NTY4MDExMDk1?igsh=MXR4MnRnODl6d3Rvcw==" target="_blank">
                             <img src="/images/DayInTheLife.png" alt="Day in the Life">
                         </a>
                         <p class="video-title">Day in the Life</p>
                     </div>
                     <div class="video-item">
-                        <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM2ODg1MjE4NDMzMjky?igsh=enJoMHl0aWpqNDA2">
+                        <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM2ODg1MjE4NDMzMjky?igsh=enJoMHl0aWpqNDA2" target="_blank">
                             <img src="/images/TopTips.png" alt="Top Tips">
                         </a>
                         <p class="video-title">Top Tips</p>
                     </div>
                     <div class="video-item">
-                        <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDg0MTMwOTI0NTgzODM4?igsh=d3VpYmNmMTBxbGY4">
+                        <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDg0MTMwOTI0NTgzODM4?igsh=d3VpYmNmMTBxbGY4" target="_blank">
                             <img src="/images/BHRA.png" alt="BHRA">
                         </a>
                         <p class="video-title">Brutally Honest Race Analysis</p>
@@ -76,11 +93,7 @@
                 Brutally Honest Race Analysis
             </a>
 
-            <ul>
-            
-                <li> HELLO </li>
-                <li> HELLO </li>
-            </ul>
+    
             <a href = "https://forms.gle/81em6PfJLuP74KKF9">
                 <button style="font-size:25px; background-color: skyblue; color:brown; border-radius: 15px;">
                     BHRA
@@ -95,5 +108,7 @@
                 .then(data => document.getElementById("footer").innerHTML = data)
                 .catch(error => console.error("Error loading footer:", error));
         </script>
+        <script src="script.js"></script> <!-- Include the script.js file here -->
+
     </body>
 </html>
