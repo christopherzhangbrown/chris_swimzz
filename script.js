@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const introImage = document.querySelector('.intro-image');
 
     function addVisibleClass() {
-        introText.classList.add('visible');
-        introImage.classList.add('visible');
+        setTimeout(() => {
+            introText.classList.add('visible');
+            introImage.classList.add('visible');
+        }, 200); // Add a slight delay to ensure the elements are rendered
     }
 
     addVisibleClass(); // Add the visible class on page load
@@ -44,4 +46,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', checkVideosVisibility);
     checkVideosVisibility(); // Check visibility on page load
+    
 });
