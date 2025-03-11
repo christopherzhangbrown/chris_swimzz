@@ -142,10 +142,7 @@ html, body {
     }
 }
 
-.contact-header{
-    font-family: Gotham, Jakarta, sans-serif;
-    text-align: center;
-}
+
 .aboutMe {
     background-color: #000000; /* Black background */
     font-family: Gotham, Jakarta, sans-serif; /* Font family */
@@ -209,12 +206,17 @@ html, body {
     padding-right: 100px; /* Add padding to the right of the text */
 }
 
-.aboutMe-paragraph {
+.aboutMe-paragraph-home {
     flex: 1; /* Allow the text to take up remaining space */
     text-align: left; /* Align the text to the left */
     color: #f5f5f5; /* Light text color */
     font-size: 25px;
     margin: 0;
+}
+.aboutMe-paragraph{
+    font-family: Gotham, Jakarta, sans-serif; /* Font family */
+    text-align: center; /* Center-align the heading */
+    margin: 50px 200px;
 }
 
 .aboutMe-content img {
@@ -336,11 +338,17 @@ aside {
     color: rgb(0, 0, 0);
     margin-top: 20px;
 }
+.BHRA-form {
+    font-family: Gotham, sans-serif;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-top: -10px;
+}
 .video-title img:hover{
     transform:  scale(1.05)
 }
 
-.sponsors-title {
+.page-title {
     text-align: center;
     font-family: Gotham, sans-serif; /* Use the desired font family */
     font-size: 60px; /* Adjust the font size as needed */
@@ -366,6 +374,23 @@ aside {
     max-width: 100%; /* Ensure the image fits within the container */
     max-height: 500px;
     height: auto; /* Maintain the aspect ratio */
+    transition: transform 0.3s ease-in-out;
+
+}
+.sponsor img:hover{
+    transform:  scale(1.05)
+}
+.contact-info{
+    text-align: center;
+    font-family: Gotham, sans-serif;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+
+    
+}
+.contact-info a {
+    color: #0057B8;
 }
 
 .contact-header {
