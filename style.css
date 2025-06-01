@@ -60,7 +60,34 @@ header {
 .navbar a:hover {
     color: #0057B8;
 }
+@media (max-width: 1050px) {
+    .intro {
+        margin-top: 20px; /* Add space above the intro section */
+    }
+}
+@media (max-width: 768px) {
+    body {
+        padding-top: 90px; /* Add padding to account for the fixed header */
+    }
 
+    .navbar ul {
+        padding: 0px 20px; /* Adjust padding for smaller screens */
+        gap: 15px; /* Reduce gap between items */
+    }
+
+    .contact-info {
+        margin-top: 30px; /* Add space above the contact section */
+        margin-bottom: 30px; /* Add space below the contact section */
+        padding: 0 20px; /* Adjust padding for smaller screens */
+    }
+
+    .sponsors-grid {
+        padding-top: 20px; /* Add space above the grid */
+        padding-bottom: 40px; /* Add space below the grid */
+    }
+
+    
+}
 
 main {
     padding-top: 75px; /* Adjust this value to match the height of your header */
@@ -73,17 +100,18 @@ html, body {
 
 .intro {
     display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
+    flex-direction: row; /* Default: Text and image side by side */
+    align-items: center; /* Vertically center the text and image */
+    gap: 20px; /* Space between text and image */
+    padding: 20px; /* Padding around the section */
     background-color: #f5f5f5; /* Optional: Add a background color */
     border-radius: 0px; /* Optional: Add rounded corners */
-    
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .intro-text {
-    flex: 1;
-    text-align: center;
+    flex: 1; /* Allow text to take up remaining space */
+    text-align: center; /* Center-align the text */
     font-family: Gotham, Jakarta, sans-serif;
     opacity: 0; /* Initially hidden */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
@@ -92,57 +120,70 @@ html, body {
 
 .intro-text h1 {
     margin: 0;
-    font-size: 130px;
-    line-height: .8; /* Adjust line height for better spacing */
+    font-size: 130px; /* Large font size for larger screens */
+    line-height: 0.8; /* Adjust line height for better spacing */
 }
+
 .intro-text h2 {
     margin: 0;
-    font-size: 90px; 
+    font-size: 90px; /* Large font size for larger screens */
     line-height: 1.5; /* Adjust line height for better spacing */
 }
 
-
 .intro-text h5 {
-    
-    margin: 20px 20px 0;
+    margin: 20px 20px 0; /* Add space below the text */
     font-size: 18px; /* Adjust font size as needed */
     color: #000000; /* Optional: Adjust text color */
     font-weight: normal;
 }
 
 .intro-image {
-    flex: 0 0 auto;
+    flex: 0 0 auto; /* Prevent the image container from growing or shrinking */
     opacity: 0; /* Initially hidden */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
     transform: translateX(100px); /* Initially positioned to the right */
-
 }
 
 .intro-image img {
-    max-width: 100%;
-    height: 400px;
+    max-width: 80%; /* Scale the image to fit within the container */
+    max-height: 400px; /* Limit the height of the image */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 1px; /* Optional: Add rounded corners */
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-right: 60px;
+    padding: 0; /* Remove any padding */
+    display: block; /* Ensure the image behaves like a block element */
+    margin: 25px auto 0; /* Add more space above the image */
 }
+
 .intro-text.visible, .intro-image.visible {
     opacity: 1; /* Fully visible */
     transform: translateX(0); /* Move to the original position */
 }
-@media (max-width: 768px) {
+
+/* Responsive styles for smaller screens */
+@media (max-width: 1050px) {
     .intro {
         flex-direction: column; /* Stack text and image vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        height: auto; /* Adjust height to fit content */
         text-align: center; /* Center-align the text */
+        padding: 20px; /* Add padding for spacing */
+    }
+
+    .intro-text {
+        margin-bottom: 20px; /* Add space below the text */
+    }
+
+    .intro-image {
+        width: 100%; /* Ensure the container spans the full width */
     }
 
     .intro-image img {
-        max-width: 80%; /* Reduce image size on smaller screens */
-        text-align: center;
+        max-width: 80%; /* Scale the image to fit within the screen */
+        margin: 0 auto; /* Center the image horizontally */
     }
 }
-
-
+    
 .aboutMe {
     background-color: #000000; /* Black background */
     font-family: Gotham, Jakarta, sans-serif; /* Font family */
@@ -222,7 +263,7 @@ html, body {
 .aboutMe-content img {
     flex: 0 0 auto; /* Prevent the image from growing or shrinking */
     height: 400px; /* Set the height of the image */
-    padding-left:100px; /* Add space to the left of the image */
+    padding-left:20px; /* Add space to the left of the image */
 }
 
 aside {
@@ -275,6 +316,40 @@ aside {
     z-index: 10;
     transform: scale(1.06); /* Expand the box on hover */
     border-color: transparent; /* Make the border transparent on hover */
+}
+@media (max-width: 1000px) {
+    
+    .aboutMe-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        gap: 20px; /* Reduce the gap between items */
+        padding: 0 20px; /* Adjust padding for smaller screens */
+    }
+
+    .aboutMe-content img {
+        padding-left: 0; /* Remove left padding */
+        height: auto; /* Allow the image to scale dynamically */
+        max-width: 100%; /* Scale the image to fit within the screen */
+    }
+
+    .aboutMe-paragraph-home {
+        text-align: center; /* Center-align the text */
+        margin: 0 auto; /* Center the paragraph horizontally */
+        padding: 0; /* Remove any unnecessary padding */
+        font-size: 20px; /* Adjust font size as needed */
+        width: 100%; /* Ensure the paragraph spans the full width */
+    }
+
+    .aboutMe-boxes {
+        flex-direction: column; /* Stack boxes vertically */
+        align-items: center; /* Center-align the boxes */
+        gap: 20px; /* Reduce the gap between boxes */
+        padding: 0 20px; /* Adjust padding for smaller screens */
+    }
+
+    .aboutMe-box {
+        max-width: 100%; /* Allow the boxes to span the full width */
+    }
 }
 
 
@@ -353,7 +428,10 @@ aside {
     font-weight: bolder;
     font-family: Gotham, sans-serif; /* Use the desired font family */
     font-size: 60px; /* Adjust the font size as needed */
-    margin-top: 110px;
+    margin-top: 120px;
+    margin-bottom: 60px;
+    padding: 0 40px; /* Add padding to the left and right edges */
+
 }   
 .sponsors-grid {
     display: grid;
@@ -373,20 +451,43 @@ aside {
 
 .sponsor img {
     max-width: 100%; /* Ensure the image fits within the container */
-    max-height: 500px;
+    max-height: 500px; /* Limit the height of the image */
     height: auto; /* Maintain the aspect ratio */
-    transition: transform 0.3s ease-in-out;
-
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+    
 }
 .sponsor img:hover{
     transform:  scale(1.05)
+}
+@media (max-width: 768px) {
+    .contact-info {
+        margin-top: 40px; /* Increase space above the text for smaller screens */
+        margin-bottom: 40px; /* Increase space below the text for smaller screens */
+    }
+
+    .sponsors-grid {
+        grid-template-columns: 1fr; /* Change to a single column layout */
+        gap: 20px; /* Reduce the gap between items */
+        padding: 0px 20px; /* Adjust padding for smaller screens */
+        width: 100%; /* Ensure the grid spans the full width */
+        margin: 0 auto; /* Center the grid horizontally */
+                justify-content: center; /* Center the grid items horizontally */
+
+    }
+
+    .sponsor img {
+        max-width: 80%; /* Make the images smaller */
+        max-height: 300px; /* Limit the height for smaller screens */
+        height: auto; /* Maintain the aspect ratio */
+        margin: 0 auto; /* Center the images horizontally */
+    }
 }
 .contact-info{
     text-align: center;
     font-family: Gotham, sans-serif;
     font-size: 20px;
-    margin-top: 0px;
     margin-bottom: 50px;
+    padding: 0 40px; /* Add padding to the left and right edges */
 
     
 }
