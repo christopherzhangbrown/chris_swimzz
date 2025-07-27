@@ -1,0 +1,5 @@
+{
+  "buildCommand": "pnpm run build",
+  "framework": "nextjs",
+  "nodeVersion": "18.x"
+}
