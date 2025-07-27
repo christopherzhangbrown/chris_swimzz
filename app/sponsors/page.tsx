@@ -7,7 +7,7 @@ export default function SponsorsPage() {
   const sponsors = [
     {
       name: "Arena",
-      logo: "/images/Sponsors/ArenaLogoCode.png",
+      logo: "/images/Sponsors/Arena_(Unternehmen)_logo.svg",
       description: "Premium swimwear and equipment",
       category: "Swimwear",
       website: "https://www.arenasport.com/en_us/",
@@ -16,8 +16,8 @@ export default function SponsorsPage() {
     },
     {
       name: "Cal AI",
-      logo: "/images/Sponsors/CalAiLogoCode.png",
-      description: "AI-powered training analytics",
+      logo: "/images/Sponsors/calAIrectangle.svg",
+      description: "AI-powered calorie tracking app",
       category: "Technology",
       website: "https://apps.apple.com/us/app/cal-ai-calorie-tracker/id6480417616",
       code: "CHRISSWIMZZ",
@@ -25,8 +25,8 @@ export default function SponsorsPage() {
     },
     {
       name: "SBR Sports",
-      logo: "/images/Sponsors/SBRLogoCode.png",
-      description: "Sports performance and recovery",
+      logo: "/images/Sponsors/SBR_logo_2e216e6c-8a4d-459a-bb69-10131f6e384a.webp",
+      description: "Swimmer care products",
       category: "Performance",
       website: "https://www.sbrsportsinc.com/?sca_ref=7937126.heHPWDBAqKvozy4",
       code: "CHRISSWIMZZ",
@@ -34,8 +34,8 @@ export default function SponsorsPage() {
     },
     {
       name: "Feed The Cheeks",
-      logo: "/images/Sponsors/FeedTheCheeksLogo.png",
-      description: "Nutrition and supplements",
+      logo: "/images/Sponsors/LOGO_WEBSITE_f7915b30-5928-4c9f-8018-d2b3ed5ed100.webp",
+      description: "Rhode Island gourmet cookies",
       category: "Nutrition",
       website: "https://www.feedthecheeks.com/",
       code: null,
@@ -43,7 +43,7 @@ export default function SponsorsPage() {
     },
     {
       name: "Block Cancer",
-      logo: "/images/Sponsors/blockCancerLogo.png",
+      logo: "/images/Sponsors/BC+PNG.png",
       description: "Cancer awareness and support",
       category: "Charity",
       website: "https://www.blockcancer.co/?srsltid=AfmBOoolzCyO9CAzq2K_efoj5YG3e_3TNvcOtoagxlN3I59ddmfUDdY1",
@@ -52,7 +52,7 @@ export default function SponsorsPage() {
     },
     {
       name: "Honey Stinger",
-      logo: "/images/Sponsors/HoneyStingerLogo.png",
+      logo: "/images/Sponsors/honey-stinger-logo.png",
       description: "Natural energy and recovery",
       category: "Nutrition",
       website: "https://honeystinger.rfrl.co/ex47z",
@@ -67,7 +67,7 @@ export default function SponsorsPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="gradient-text">Partners</span>
+            My <span className="gradient-text">Partners</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             I'm proud to work with these amazing brands that support my swimming journey and help me create valuable
@@ -83,13 +83,17 @@ export default function SponsorsPage() {
             {sponsors.map((sponsor, index) => (
               <Card key={index} className="card-hover border-0 shadow-lg group">
                 <CardContent className="p-8 text-center">
-                  <div className="mb-6 relative overflow-hidden rounded-lg bg-white p-8">
+                  <div className="mb-6 relative overflow-hidden rounded-lg p-8 bg-white">
                     <Image
                       src={sponsor.logo || "/images/logos/logoblackimg.png"}
                       alt={`${sponsor.name} logo`}
                       width={200}
                       height={100}
-                      className="mx-auto object-contain h-16 w-auto group-hover:scale-110 transition-transform duration-300"
+                      className={`mx-auto group-hover:scale-110 transition-transform duration-300 filter brightness-0 ${
+                        sponsor.name === "Arena" || sponsor.name === "SBR Sports" 
+                          ? "h-16 w-full object-contain" 
+                          : "h-16 w-auto object-contain"
+                      }`}
                     />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{sponsor.name}</h3>
@@ -128,7 +132,7 @@ export default function SponsorsPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-blue-600">12K+</span>
+                <span className="text-2xl font-bold text-blue-600">20K+</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Engaged Followers</h3>
               <p className="text-gray-600">Active community of swimmers and athletes</p>

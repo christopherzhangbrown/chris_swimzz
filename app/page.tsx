@@ -6,7 +6,7 @@ import { Play, Award, Instagram, Timer, Users, ArrowRight, Brain, Mail, Star } f
 
 export default function HomePage() {
   const stats = [
-    { label: "Instagram Followers", value: "12K+", icon: Instagram },
+    { label: "Instagram Followers", value: "20K+", icon: Instagram },
     { label: "Years Swimming", value: "12+", icon: Timer },
     { label: "Brown University", value: "D1", icon: Award },
   ]

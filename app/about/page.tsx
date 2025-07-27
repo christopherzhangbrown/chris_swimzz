@@ -7,7 +7,7 @@ import { MapPin, Target, Users, Instagram, Mail, Award, Zap } from "lucide-react
 export default function AboutPage() {
   const skills = [
     { icon: Award, title: "D1 Competitive Swimming", description: "12+ years of competitive experience" },
-    { icon: Users, title: "Content Creation", description: "Engaging 12K+ followers with valuable content" },
+    { icon: Users, title: "Content Creation", description: "Engaging 20K+ followers with valuable content" },
     { icon: Target, title: "Performance Analysis", description: "Technical expertise in swimming mechanics" },
     { icon: Zap, title: "Coaching Insights", description: "Sharing knowledge to help others improve" },
   ]
@@ -241,10 +241,12 @@ export default function AboutPage() {
             sport.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
-              <Instagram className="mr-2 h-5 w-5" />
-              Follow @chris_swimzz
-            </Button>
+            <a href="https://www.instagram.com/chris_swimzz/" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
+                <Instagram className="mr-2 h-5 w-5" />
+                Follow @chris_swimzz
+              </Button>
+            </a>
             <Link href="/contact">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 bg-transparent">
                 <Mail className="mr-2 h-5 w-5" />
