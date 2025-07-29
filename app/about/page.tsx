@@ -199,8 +199,7 @@ export default function AboutPage() {
                 </p>
 
                 <p>
-                  Originally from Charlotte, North Carolina, I bring that Southern hospitality and work ethic to
-                  everything I do. The transition to Providence, Rhode Island for college has been an incredible journey
+                  Originally from Charlotte, North Carolina, d for college has been an incredible journey
                   of growth both in and out of the water.
                 </p>
 

@@ -80,10 +80,12 @@ export default function HomePage() {
                 next generation of swimmers.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-                  <Instagram className="mr-2 h-5 w-5" />
-                  Follow My Instagram
-                </Button>
+                <a href="https://www.instagram.com/chris_swimzz/" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                    <Instagram className="mr-2 h-5 w-5" />
+                    Follow My Instagram
+                  </Button>
+                </a>
                 <Link href="/ai-start">
                   <Button size="lg" variant="outline" className="border-blue-200 hover:bg-blue-50 bg-transparent">
                     <Brain className="mr-2 h-5 w-5" />
@@ -173,28 +175,64 @@ export default function HomePage() {
             {popularVideos.map((video, index) => (
               <Card key={index} className="card-hover cursor-pointer border-0 shadow-lg">
                 <CardContent className="p-0">
-                  <div className="relative">
-                    <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-t-lg flex items-center justify-center">
-                      <Play className="h-12 w-12 text-blue-600" />
-                    </div>
-                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-t-lg">
-                      <Play className="h-12 w-12 text-white" />
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{video.title}</h3>
-                    <p className="text-sm text-gray-600">{video.views}</p>
-                  </div>
+                  {video.title === "Top Tips" ? (
+                    <a href="https://www.instagram.com/stories/highlights/18036885218433292/" target="_blank" rel="noopener noreferrer">
+                      <div className="relative">
+                        <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-t-lg flex items-center justify-center">
+                          <Play className="h-12 w-12 text-blue-600" />
+                        </div>
+                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-t-lg">
+                          <Play className="h-12 w-12 text-white" />
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{video.title}</h3>
+                        <p className="text-sm text-gray-600">{video.views}</p>
+                      </div>
+                    </a>
+                  ) : video.title === "Day in the Life" ? (
+                    <a href="https://www.instagram.com/stories/highlights/18035038568011095/" target="_blank" rel="noopener noreferrer">
+                      <div className="relative">
+                        <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-t-lg flex items-center justify-center">
+                          <Play className="h-12 w-12 text-blue-600" />
+                        </div>
+                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-t-lg">
+                          <Play className="h-12 w-12 text-white" />
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{video.title}</h3>
+                        <p className="text-sm text-gray-600">{video.views}</p>
+                      </div>
+                    </a>
+                  ) : (
+                    <a href="https://www.instagram.com/stories/highlights/18084130924583838/" target="_blank" rel="noopener noreferrer">
+                      <div className="relative">
+                        <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-t-lg flex items-center justify-center">
+                          <Play className="h-12 w-12 text-blue-600" />
+                        </div>
+                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-t-lg">
+                          <Play className="h-12 w-12 text-white" />
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{video.title}</h3>
+                        <p className="text-sm text-gray-600">{video.views}</p>
+                      </div>
+                    </a>
+                  )}
                 </CardContent>
               </Card>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <Button variant="outline" size="lg" className="border-blue-200 hover:bg-blue-50 bg-transparent">
-              <Instagram className="mr-2 h-5 w-5" />
-              View All Content
-            </Button>
+            <a href="https://www.instagram.com/chris_swimzz/" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="border-blue-200 hover:bg-blue-50 bg-transparent">
+                <Instagram className="mr-2 h-5 w-5" />
+                View All Content
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -207,10 +245,12 @@ export default function HomePage() {
             Join my community and get exclusive access to training tips, technique analysis, and swimming insights.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
-              <Instagram className="mr-2 h-5 w-5" />
-              Follow on Instagram
-            </Button>
+            <a href="https://www.instagram.com/chris_swimzz/" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
+                <Instagram className="mr-2 h-5 w-5" />
+                Follow on Instagram
+              </Button>
+            </a>
             <Link href="/about">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 bg-transparent">
                 <Users className="mr-2 h-5 w-5" />
