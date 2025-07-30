@@ -33,7 +33,7 @@ export default function Footer() {
             <Link href="https://www.youtube.com/@Chris_swimzz" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
               <Youtube className="h-5 w-5" />
             </Link>
-            <Link href="https://www.facebook.com/ChrisSwimzz/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+            <Link href="https://www.facebook.com/profile.php?id=61560790375196" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
               <Facebook className="h-5 w-5" />
             </Link>
           </div>

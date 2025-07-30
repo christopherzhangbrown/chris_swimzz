@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MessageSquare, Send, Instagram, Youtube, Facebook } from "lucide-react"
+import { FaTiktok } from "react-icons/fa"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -38,15 +39,15 @@ export default function ContactPage() {
       icon: Instagram,
       color: "text-pink-600",
       bgColor: "bg-pink-50 hover:bg-pink-100",
-      link: "#",
+      link: "https://www.instagram.com/chris_swimzz/",
     },
     {
       name: "TikTok",
       handle: "@chris_swimzz",
-      icon: MessageSquare, // Using MessageSquare as TikTok icon placeholder
+      icon: FaTiktok,
       color: "text-black",
       bgColor: "bg-gray-50 hover:bg-gray-100",
-      link: "#",
+      link: "https://www.tiktok.com/@chris_swimzz",
     },
     {
       name: "YouTube",
@@ -54,7 +55,7 @@ export default function ContactPage() {
       icon: Youtube,
       color: "text-red-600",
       bgColor: "bg-red-50 hover:bg-red-100",
-      link: "#",
+      link: "https://www.youtube.com/@chris_swimzz",
     },
     {
       name: "Facebook",
@@ -62,7 +63,7 @@ export default function ContactPage() {
       icon: Facebook,
       color: "text-blue-600",
       bgColor: "bg-blue-50 hover:bg-blue-100",
-      link: "#",
+      link: "https://www.facebook.com/profile.php?id=61560790375196",
     },
   ]
 
@@ -163,7 +164,7 @@ export default function ContactPage() {
                   </div>
                   <p className="text-gray-600 mb-4">For sponsorships, partnerships, and business collaborations:</p>
                   <Button variant="outline" className="border-blue-200 hover:bg-blue-50 bg-transparent">
-                    chrisswimzzinquires@gmail.com
+                    <a href="mailto:chrisswimzzinquires@gmail.com" className="text-blue-600 hover:underline">chrisswimzzinquires@gmail.com</a>
                   </Button>
                 </CardContent>
               </Card>
