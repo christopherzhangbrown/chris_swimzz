@@ -148,10 +148,10 @@ export default function SponsorsPage() {
 
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-blue-600">500+</span>
+                <span className="text-2xl font-bold text-blue-600">1M+</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Content Pieces</h3>
-              <p className="text-gray-600">Regular, high-quality content creation</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Monthly Views</h3>
+              <p className="text-gray-600">Consistently reaching a large audience</p>
             </div>
           </div>
         </div>

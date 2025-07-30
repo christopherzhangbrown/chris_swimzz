@@ -101,10 +101,11 @@ export default function AboutPage() {
                   </p>
 
                   <p>
-                    <strong>The inspiration for @chris_swimzz came from a simple realization:</strong> there were
-                    countless swimmers out there who could benefit from the knowledge I'd gained through years of
-                    training, competing, and learning from incredible coaches. I wanted to bridge the gap between elite
-                    swimming knowledge and everyday swimmers looking to improve.
+                    <strong>The inspiration for the account was actually pretty simple:</strong> I started off 
+                    just sharing my race videos with friends and posting them on Instagram to save storage on my phone.
+                     Over time, I realized how much people enjoyed seeing the behind-the-scenes and the real journey of a swimmer. 
+                     Now, as a D1 athlete, I get to share a unique perspective that most people never get to see—giving everyday 
+                     swimmers a window into the world of elite college swimming.
                   </p>
 
                   <p>
@@ -160,8 +161,7 @@ export default function AboutPage() {
               <CardContent className="p-6 sm:p-8 md:p-12 text-center">
                 <h3 className="text-2xl font-bold mb-4">My Mission</h3>
                 <p className="text-base sm:text-lg opacity-90">
-                  To democratize elite swimming knowledge and inspire the next generation of swimmers through authentic,
-                  educational content that bridges the gap between competitive excellence and accessible learning.
+                  To inspire the next generation of swimmers by sharing guidance, motivation, and knowledge, helping every swimmer grow, achieve, and dream bigger.
                 </p>
               </CardContent>
             </Card>
@@ -199,8 +199,7 @@ export default function AboutPage() {
                 </p>
 
                 <p>
-                  Originally from Charlotte, North Carolina, d for college has been an incredible journey
-                  of growth both in and out of the water.
+                  Originally from Charlotte, North Carolina, my move to college has been an incredible journey of growth—both in and out of the water
                 </p>
 
                 <p>
