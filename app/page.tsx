@@ -14,17 +14,17 @@ export default function HomePage() {
   const popularVideos = [
     {
       title: "Day in the Life",
-      views: "45K views",
+      views: "230K views",
       thumbnail: "/images/DayInTheLife.png",
     },
     {
       title: "Top Tips",
-      views: "32K views",
+      views: "253K views",
       thumbnail: "/images/TopTips.png",
     },
     {
       title: "Brutally Honest Race Analysis",
-      views: "28K views",
+      views: "137K views",
       thumbnail: "/images/BHRA.png",
     },
   ]
@@ -173,54 +173,29 @@ export default function HomePage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {popularVideos.map((video, index) => (
-              <Card key={index} className="card-hover cursor-pointer border-0 shadow-lg">
-                <CardContent className="p-0">
-                  {video.title === "Top Tips" ? (
-                    <a href="https://www.instagram.com/stories/highlights/18036885218433292/" target="_blank" rel="noopener noreferrer">
-                      <div className="relative">
-                        <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-t-lg flex items-center justify-center">
-                          <Play className="h-12 w-12 text-blue-600" />
-                        </div>
-                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-t-lg">
-                          <Play className="h-12 w-12 text-white" />
-                        </div>
-                      </div>
-                      <div className="p-6">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{video.title}</h3>
-                        <p className="text-sm text-gray-600">{video.views}</p>
-                      </div>
-                    </a>
-                  ) : video.title === "Day in the Life" ? (
-                    <a href="https://www.instagram.com/stories/highlights/18035038568011095/" target="_blank" rel="noopener noreferrer">
-                      <div className="relative">
-                        <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-t-lg flex items-center justify-center">
-                          <Play className="h-12 w-12 text-blue-600" />
-                        </div>
-                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-t-lg">
-                          <Play className="h-12 w-12 text-white" />
-                        </div>
-                      </div>
-                      <div className="p-6">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{video.title}</h3>
-                        <p className="text-sm text-gray-600">{video.views}</p>
-                      </div>
-                    </a>
-                  ) : (
-                    <a href="https://www.instagram.com/stories/highlights/18084130924583838/" target="_blank" rel="noopener noreferrer">
-                      <div className="relative">
-                        <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-t-lg flex items-center justify-center">
-                          <Play className="h-12 w-12 text-blue-600" />
-                        </div>
-                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-t-lg">
-                          <Play className="h-12 w-12 text-white" />
-                        </div>
-                      </div>
-                      <div className="p-6">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{video.title}</h3>
-                        <p className="text-sm text-gray-600">{video.views}</p>
-                      </div>
-                    </a>
-                  )}
+              <Card key={index} className="card-hover cursor-pointer border-0 shadow-lg flex flex-col h-[420px]">
+                <CardContent className="p-0 flex-1 flex flex-col">
+                  <a href={
+                    video.title === "Top Tips"
+                      ? "https://www.instagram.com/stories/highlights/18036885218433292/"
+                      : video.title === "Day in the Life"
+                      ? "https://www.instagram.com/stories/highlights/18035038568011095/"
+                      : "https://www.instagram.com/stories/highlights/18084130924583838/"
+                  } target="_blank" rel="noopener noreferrer" className="flex flex-col h-full">
+                    <div className="relative">
+                      <Image
+                        src={video.thumbnail}
+                        alt={video.title}
+                        width={400}
+                        height={320}
+                        className="rounded-t-lg object-cover w-full h-[320px]"
+                      />
+                    </div>
+                    <div className="p-6 flex-1 flex flex-col justify-end">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">{video.title}</h3>
+                      <p className="text-sm text-gray-600">{video.views}</p>
+                    </div>
+                  </a>
                 </CardContent>
               </Card>
             ))}
