@@ -12,12 +12,29 @@ export default function AIStartPage() {
   const [email, setEmail] = useState("")
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle waitlist signup
-    console.log("Waitlist signup:", email)
-    setIsSubmitted(true)
-    setEmail("")
+  const [error, setError] = useState("");
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    try {
+      const res = await fetch("https://formspree.io/f/meozzeyk", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setIsSubmitted(true);
+        setEmail("");
+      } else {
+        setError("Submission failed. Please try again.");
+      }
+    } catch {
+      setError("Submission failed. Please try again.");
+    }
   }
 
   return (
@@ -53,6 +70,9 @@ export default function AIStartPage() {
                     <Mail className="mr-2 h-5 w-5" />
                     Join Waitlist
                   </Button>
+                  {error && (
+                    <p className="text-red-600 text-sm mt-2">{error}</p>
+                  )}
                 </form>
               </CardContent>
             </Card>
