@@ -109,7 +109,7 @@ export default function ContactPage() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full"
+                  className="w-full placeholder:text-gray-400"
                       placeholder="Your full name"
                     />
                   </div>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full"
+                  className="w-full placeholder:text-gray-400"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -140,7 +140,7 @@ export default function ContactPage() {
                       required
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full min-h-[120px]"
+                  className="w-full min-h-[120px] placeholder:text-gray-400"
                       placeholder="Tell me about your inquiry, collaboration idea, or just say hello!"
                     />
                   </div>
