@@ -17,7 +17,7 @@ export default function AIStartPage() {
     e.preventDefault();
     setError("");
     try {
-      const res = await fetch("https://formspree.io/f/meozzeyk", {
+      const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: {
           "Accept": "application/json",
@@ -30,7 +30,7 @@ export default function AIStartPage() {
         setIsSubmitted(true);
         setEmail("");
       } else {
-        setError("Submission failed. Please try again.");
+        setError(data.error || "Submission failed. Please try again.");
       }
     } catch {
       setError("Submission failed. Please try again.");
