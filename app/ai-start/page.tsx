@@ -64,7 +64,7 @@ export default function AIStartPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full"
+                    className="w-full placeholder:text-gray-400"
                   />
                   <Button type="submit" size="lg" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                     <Mail className="mr-2 h-5 w-5" />

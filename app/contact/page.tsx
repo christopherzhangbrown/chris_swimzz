@@ -17,12 +17,35 @@ export default function ContactPage() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({ name: "", email: "", message: "" })
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    setSuccess(false);
+    try {
+      const res = await fetch("https://formspree.io/f/mjkorqbn", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setError("Submission failed. Please try again.");
+      }
+    } catch {
+      setError("Submission failed. Please try again.");
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -149,6 +172,12 @@ export default function ContactPage() {
                     <Send className="mr-2 h-5 w-5" />
                     Send Message
                   </Button>
+                  {success && (
+                    <p className="text-green-600 text-sm mt-2">Message sent! I'll get back to you soon.</p>
+                  )}
+                  {error && (
+                    <p className="text-red-600 text-sm mt-2">{error}</p>
+                  )}
                 </form>
               </CardContent>
             </Card>
