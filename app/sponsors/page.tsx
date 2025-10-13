@@ -11,7 +11,7 @@ export default function SponsorsPage() {
       description: "Premium swimwear and equipment",
       category: "Swimwear",
       website: "https://www.arenasport.com/en_us/",
-      code: "amb-chris10",
+      code: "amb-chris-discount",
       codeDescription: "10% off all products",
     },
     {
