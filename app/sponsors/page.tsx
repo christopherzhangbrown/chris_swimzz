@@ -6,6 +6,16 @@ import { Mail, ExternalLink } from "lucide-react"
 export default function SponsorsPage() {
   const sponsors = [
     {
+      name: "Nike Swim",
+      logo: "/images/Sponsors/nikeswimlogo.png",
+      description: "Premium swimwear and equipment",
+      category: "Swimwear",
+      website: "https://www.nike.com/",
+      code: null,
+      codeDescription: null,
+      hidden: false,
+    },
+    {
       name: "Arena",
       logo: "/images/Sponsors/Arena_(Unternehmen)_logo.svg",
       description: "Premium swimwear and equipment",
@@ -13,6 +23,7 @@ export default function SponsorsPage() {
       website: "https://www.arenasport.com/en_us/",
       code: "amb-chris-discount",
       codeDescription: "10% off all products",
+      hidden: true,
     },
     {
       name: "Cal AI",
@@ -22,6 +33,7 @@ export default function SponsorsPage() {
       website: "https://apps.apple.com/us/app/cal-ai-calorie-tracker/id6480417616",
       code: "CHRISSWIMZZ",
       codeDescription: "3 days free trial",
+      hidden: true,
     },
     {
       name: "SBR Sports",
@@ -31,6 +43,7 @@ export default function SponsorsPage() {
       website: "https://www.sbrsportsinc.com/?sca_ref=7937126.heHPWDBAqKvozy4",
       code: "CHRISSWIMZZ",
       codeDescription: "20% off all products",
+      hidden: false,
     },
     {
       name: "Feed The Cheeks",
@@ -40,6 +53,7 @@ export default function SponsorsPage() {
       website: "https://www.feedthecheeks.com/",
       code: null,
       codeDescription: null,
+      hidden: true,
     },
     {
       name: "Block Cancer",
@@ -49,6 +63,7 @@ export default function SponsorsPage() {
       website: "https://www.blockcancer.co/?srsltid=AfmBOoolzCyO9CAzq2K_efoj5YG3e_3TNvcOtoagxlN3I59ddmfUDdY1",
       code: null,
       codeDescription: null,
+      hidden: true,
     },
     {
       name: "Honey Stinger",
@@ -58,8 +73,11 @@ export default function SponsorsPage() {
       website: "https://honeystinger.rfrl.co/ex47z",
       code: null,
       codeDescription: null,
+      hidden: true,
     },
   ]
+
+  const visibleSponsors = sponsors.filter((sponsor) => !sponsor.hidden)
 
   return (
     <div className="min-h-screen pt-20 bg-white">
@@ -80,7 +98,7 @@ export default function SponsorsPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {sponsors.map((sponsor, index) => (
+            {visibleSponsors.map((sponsor, index) => (
               <Card key={index} className="card-hover border-0 shadow-lg group">
                 <CardContent className="p-8 text-center">
                   <div className="mb-6 relative overflow-hidden rounded-lg p-8 bg-white">
