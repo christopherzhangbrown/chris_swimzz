@@ -75,6 +75,16 @@ export default function SponsorsPage() {
       codeDescription: null,
       hidden: true,
     },
+    {
+      name: "DripDrop",
+      logo: "/images/Sponsors/dripdroplogo.png",
+      description: "Fast-absorbing electrolyte hydration",
+      category: "Hydration",
+      website: "https://dripdrop.com/CHRISSWIMZZ",
+      code: "CHRISSWIMZZ",
+      codeDescription: "20% off all products",
+      hidden: false,
+    },
   ]
 
   const visibleSponsors = sponsors.filter((sponsor) => !sponsor.hidden)
