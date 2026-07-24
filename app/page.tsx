@@ -1,10 +1,9 @@
 import HeroSection from "./components/home/HeroSection"
 import StatBand from "./components/home/StatBand"
 import PopularContent from "./components/home/PopularContent"
-import ExploreMore from "./components/home/ExploreMore"
+import SectionDivider from "./components/home/SectionDivider"
 import AboutSection from "./components/home/AboutSection"
 import SponsorsSection from "./components/home/SponsorsSection"
-import AiStartSection from "./components/home/AiStartSection"
 import ContactSection from "./components/home/ContactSection"
 
 export default function HomePage() {
@@ -13,10 +12,9 @@ export default function HomePage() {
       <HeroSection />
       <StatBand />
       <PopularContent />
-      <ExploreMore />
+      <SectionDivider />
       <AboutSection />
       <SponsorsSection />
-      <AiStartSection />
       <ContactSection />
     </div>
   )
