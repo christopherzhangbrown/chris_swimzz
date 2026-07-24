@@ -1,4 +1,6 @@
 import Image from "next/image"
+import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
+import GhostNumber from "./GhostNumber"
 
 const sponsors = [
   {
@@ -81,52 +83,54 @@ export default function SponsorsSection() {
   return (
     <section id="sponsors" className="scroll-mt-[76px] px-6 pb-[120px]">
       <div className="mx-auto max-w-[1280px]">
-        <div className="mb-14">
-          <div className="mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
-            WHO BACKS THE JOURNEY
+        <Reveal className="relative mb-14">
+          <GhostNumber number="03" />
+          <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
+            WHO BACKS THE JOURNEY — 03
           </div>
-          <h2 className="m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+          <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
             SPONSORS
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5">
-          {visibleSponsors.map((sponsor) => (
-            <div
-              key={sponsor.name}
-              className="flex flex-col gap-4 rounded-[20px] border border-white/[0.08] bg-white/[0.03] p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-white/30 hover:shadow-[0_20px_40px_rgba(255,255,255,0.1)]"
-            >
-              <div className="flex h-12 items-center">
-                <Image
-                  src={sponsor.logo}
-                  alt={`${sponsor.name} logo`}
-                  width={160}
-                  height={64}
-                  className="h-full w-auto object-contain [filter:brightness(0)_invert(1)] opacity-90"
-                />
-              </div>
-              <div className="font-[family-name:var(--font-big-shoulders)] text-[20px] font-extrabold">
-                {sponsor.name}
-              </div>
-              <div className="text-[12px] font-medium tracking-[0.08em] text-white/50">
-                {sponsor.category.toUpperCase()}
-              </div>
-              {sponsor.code && (
-                <div className="text-[12px] font-bold tracking-[0.05em] text-white/70">
-                  CODE {sponsor.code} — {sponsor.codeDescription}
-                </div>
-              )}
+        <RevealStagger staggerDelay={0.08}>
+          {visibleSponsors.map((sponsor, index) => (
+            <RevealItem key={sponsor.name}>
               <a
                 href={sponsor.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto text-[12px] font-bold tracking-[0.08em] text-white"
+                className="group flex items-center gap-8 border-b border-white/[0.08] py-10 transition-colors duration-300 hover:bg-white/[0.02]"
               >
-                VISIT SITE →
+                <div aria-hidden="true" className="w-12 shrink-0 font-[family-name:var(--font-jetbrains-mono)] text-[16px] font-bold tracking-[0.04em] text-white/30">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+                <div className="flex h-16 w-44 shrink-0 items-center">
+                  <Image
+                    src={sponsor.logo}
+                    alt={`${sponsor.name} logo`}
+                    width={220}
+                    height={90}
+                    className="h-full w-auto object-contain object-left [filter:brightness(0)_invert(1)] opacity-60 transition-opacity duration-300 group-hover:opacity-100"
+                  />
+                </div>
+                <div className="flex-1">
+                  <div className="font-[family-name:var(--font-big-shoulders)] text-[32px] font-extrabold uppercase leading-none tracking-[0.01em]">
+                    {sponsor.name}
+                  </div>
+                  {sponsor.code && (
+                    <div className="mt-2 font-[family-name:var(--font-jetbrains-mono)] text-[11px] tracking-[0.04em] text-white/50">
+                      CODE {sponsor.code} — {sponsor.codeDescription}
+                    </div>
+                  )}
+                </div>
+                <div className="shrink-0 font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.08em] text-white/40 transition-colors duration-300 group-hover:text-white">
+                  VISIT →
+                </div>
               </a>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealStagger>
       </div>
     </section>
   )
