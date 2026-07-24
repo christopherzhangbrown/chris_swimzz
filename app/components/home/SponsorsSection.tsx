@@ -93,38 +93,38 @@ export default function SponsorsSection() {
           </h2>
         </Reveal>
 
-        <RevealStagger className="mx-auto max-w-[880px]" staggerDelay={0.08}>
+        <RevealStagger staggerDelay={0.08}>
           {visibleSponsors.map((sponsor, index) => (
             <RevealItem key={sponsor.name}>
               <a
                 href={sponsor.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-6 border-b border-white/[0.08] py-6 transition-colors duration-300 hover:bg-white/[0.02]"
+                className="group flex items-center gap-8 border-b border-white/[0.08] py-10 transition-colors duration-300 hover:bg-white/[0.02]"
               >
-                <div aria-hidden="true" className="w-8 shrink-0 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.04em] text-white/30">
+                <div aria-hidden="true" className="w-12 shrink-0 font-[family-name:var(--font-jetbrains-mono)] text-[16px] font-bold tracking-[0.04em] text-white/30">
                   {String(index + 1).padStart(2, "0")}
                 </div>
-                <div className="flex h-9 w-24 shrink-0 items-center">
+                <div className="flex h-16 w-44 shrink-0 items-center">
                   <Image
                     src={sponsor.logo}
                     alt={`${sponsor.name} logo`}
-                    width={140}
-                    height={56}
+                    width={220}
+                    height={90}
                     className="h-full w-auto object-contain object-left [filter:brightness(0)_invert(1)] opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:[filter:none]"
                   />
                 </div>
                 <div className="flex-1">
-                  <div className="font-[family-name:var(--font-big-shoulders)] text-[18px] font-extrabold uppercase tracking-[0.01em]">
+                  <div className="font-[family-name:var(--font-big-shoulders)] text-[32px] font-extrabold uppercase leading-none tracking-[0.01em]">
                     {sponsor.name}
                   </div>
                   {sponsor.code && (
-                    <div className="mt-1 font-[family-name:var(--font-jetbrains-mono)] text-[11px] tracking-[0.04em] text-white/50">
+                    <div className="mt-2 font-[family-name:var(--font-jetbrains-mono)] text-[13px] tracking-[0.04em] text-white/50">
                       CODE {sponsor.code} — {sponsor.codeDescription}
                     </div>
                   )}
                 </div>
-                <div className="shrink-0 text-[12px] font-bold tracking-[0.08em] text-white/40 transition-colors duration-300 group-hover:text-white">
+                <div className="shrink-0 text-[14px] font-bold tracking-[0.08em] text-white/40 transition-colors duration-300 group-hover:text-white">
                   VISIT →
                 </div>
               </a>
