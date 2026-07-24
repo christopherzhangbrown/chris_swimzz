@@ -1,5 +1,6 @@
 import PopularContentCard from "./PopularContentCard"
 import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
+import GhostNumber from "./GhostNumber"
 
 const videos = [
   {
@@ -27,11 +28,12 @@ export default function PopularContent() {
     <section className="px-6 pb-[100px]">
       <div className="mx-auto max-w-[1280px]">
         <Reveal className="mb-14 flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <div className="mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
-              MOST WATCHED
+          <div className="relative">
+            <GhostNumber number="02" />
+            <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
+              MOST WATCHED — 02
             </div>
-            <h2 className="m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+            <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
               POPULAR CONTENT
             </h2>
           </div>
