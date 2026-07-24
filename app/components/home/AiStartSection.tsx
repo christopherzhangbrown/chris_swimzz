@@ -50,27 +50,30 @@ export default function AiStartSection() {
           </h2>
         </Reveal>
 
-        <RevealStagger className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_minmax(0,380px)] lg:items-start">
+        <RevealStagger className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_auto_minmax(0,380px)] lg:items-start">
           <RevealItem className="max-w-[560px]">
-            <p className="mb-6 text-[16px] leading-[1.7] text-white/65">
+            <p className="mb-8 text-[16px] leading-[1.7] text-white/65">
               AI-powered feedback on your dive start, in seconds. Waitlist open now — be first to try it.
             </p>
 
             {!isSubmitted ? (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
+              <form onSubmit={handleSubmit} className="space-y-8">
                 <Input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder="you@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="h-[52px] w-full rounded-full border-white/[0.15] bg-white/[0.03] px-5 text-white placeholder:text-white/40 focus-visible:ring-white"
+                  className="h-auto w-full rounded-none border-0 border-b border-white/15 bg-transparent px-0 py-3 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-white/50"
                 />
                 <button
                   type="submit"
-                  className="h-[52px] shrink-0 rounded-full bg-white px-8 font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-[#08090b] transition-colors duration-300 hover:bg-white/85"
+                  className="group flex items-center gap-3 font-[family-name:var(--font-jetbrains-mono)] text-[14px] font-bold tracking-[0.06em] text-white"
                 >
-                  JOIN WAITLIST →
+                  JOIN WAITLIST
+                  <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
                 </button>
               </form>
             ) : (
@@ -80,6 +83,8 @@ export default function AiStartSection() {
             )}
             {error && <p className="mt-3 text-[13px] text-red-400">{error}</p>}
           </RevealItem>
+
+          <div aria-hidden="true" className="hidden self-stretch border-l border-dashed border-white/15 lg:block" />
 
           <RevealItem className="relative aspect-[4/5] w-full overflow-hidden rounded-[20px] border border-white/[0.12] bg-white/[0.02]">
             <div className="absolute right-4 top-4 rounded-full bg-white px-3.5 py-1.5 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-bold tracking-[0.04em] text-[#08090b]">

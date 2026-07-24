@@ -69,7 +69,7 @@ export default function ContactSection() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-8">
               <Input
                 name="name"
                 type="text"
@@ -77,7 +77,7 @@ export default function ContactSection() {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="h-[52px] w-full rounded-full border-white/[0.15] bg-white/[0.03] px-5 text-white placeholder:text-white/40 focus-visible:ring-white"
+                className="h-auto w-full rounded-none border-0 border-b border-white/15 bg-transparent px-0 py-3 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-white/50"
               />
               <Input
                 name="email"
@@ -86,7 +86,7 @@ export default function ContactSection() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="h-[52px] w-full rounded-full border-white/[0.15] bg-white/[0.03] px-5 text-white placeholder:text-white/40 focus-visible:ring-white"
+                className="h-auto w-full rounded-none border-0 border-b border-white/15 bg-transparent px-0 py-3 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-white/50"
               />
               <Textarea
                 name="message"
@@ -94,7 +94,7 @@ export default function ContactSection() {
                 required
                 value={formData.message}
                 onChange={handleChange}
-                className="min-h-[160px] w-full rounded-[20px] border-white/[0.15] bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/40 focus-visible:ring-white"
+                className="min-h-[100px] w-full resize-none rounded-none border-0 border-b border-white/15 bg-transparent px-0 py-3 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-white/50"
               />
               <button
                 type="submit"
