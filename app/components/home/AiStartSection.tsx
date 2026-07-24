@@ -68,13 +68,13 @@ export default function AiStartSection() {
                 />
                 <button
                   type="submit"
-                  className="h-[52px] shrink-0 rounded-full bg-white px-8 text-[14px] font-bold tracking-[0.03em] text-[#08090b] transition-colors duration-300 hover:bg-white/85"
+                  className="h-[52px] shrink-0 rounded-full bg-white px-8 font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-[#08090b] transition-colors duration-300 hover:bg-white/85"
                 >
                   JOIN WAITLIST →
                 </button>
               </form>
             ) : (
-              <p className="text-[14px] font-bold tracking-[0.03em] text-white">
+              <p className="font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-white">
                 You&apos;re on the list — we&apos;ll email you when it&apos;s ready.
               </p>
             )}
@@ -82,7 +82,7 @@ export default function AiStartSection() {
           </RevealItem>
 
           <RevealItem className="relative aspect-[4/5] w-full overflow-hidden rounded-[20px] border border-white/[0.12] bg-white/[0.02]">
-            <div className="absolute right-4 top-4 rounded-full bg-white px-3.5 py-1.5 text-[11px] font-bold tracking-[0.04em] text-[#08090b]">
+            <div className="absolute right-4 top-4 rounded-full bg-white px-3.5 py-1.5 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-bold tracking-[0.04em] text-[#08090b]">
               WAITLIST OPEN
             </div>
 

@@ -41,7 +41,7 @@ export default function PopularContent() {
             href="https://www.instagram.com/chris_swimzz/"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-b border-white/35 pb-1 text-[14px] font-bold tracking-[0.03em] text-white/80 transition-colors duration-300 hover:border-white hover:text-white"
+            className="border-b border-white/35 pb-1 font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-white/80 transition-colors duration-300 hover:border-white hover:text-white"
           >
             VIEW ALL ON INSTAGRAM →
           </a>

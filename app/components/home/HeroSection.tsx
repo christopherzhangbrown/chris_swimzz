@@ -47,7 +47,7 @@ export default function HeroSection() {
             href="https://www.instagram.com/chris_swimzz/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 border-b border-white/40 pb-1.5 text-[14px] font-bold tracking-[0.03em] text-white/80 transition-colors duration-300 hover:border-white hover:text-white"
+            className="inline-flex items-center gap-2.5 border-b border-white/40 pb-1.5 font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-white/80 transition-colors duration-300 hover:border-white hover:text-white"
           >
             WATCH ON INSTAGRAM →
           </a>

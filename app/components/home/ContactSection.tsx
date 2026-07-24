@@ -98,7 +98,7 @@ export default function ContactSection() {
               />
               <button
                 type="submit"
-                className="h-[52px] w-full rounded-full bg-white text-[14px] font-bold tracking-[0.03em] text-[#08090b] transition-colors duration-300 hover:bg-white/85 sm:w-auto sm:px-8"
+                className="h-[52px] w-full rounded-full bg-white font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-[#08090b] transition-colors duration-300 hover:bg-white/85 sm:w-auto sm:px-8"
               >
                 SEND MESSAGE →
               </button>

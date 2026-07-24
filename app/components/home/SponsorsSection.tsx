@@ -111,7 +111,7 @@ export default function SponsorsSection() {
                     alt={`${sponsor.name} logo`}
                     width={220}
                     height={90}
-                    className="h-full w-auto object-contain object-left [filter:brightness(0)_invert(1)] opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:[filter:none]"
+                    className="h-full w-auto object-contain object-left [filter:brightness(0)_invert(1)] opacity-60 transition-opacity duration-300 group-hover:opacity-100"
                   />
                 </div>
                 <div className="flex-1">
@@ -124,7 +124,7 @@ export default function SponsorsSection() {
                     </div>
                   )}
                 </div>
-                <div className="shrink-0 text-[14px] font-bold tracking-[0.08em] text-white/40 transition-colors duration-300 group-hover:text-white">
+                <div className="shrink-0 font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.08em] text-white/40 transition-colors duration-300 group-hover:text-white">
                   VISIT →
                 </div>
               </a>
