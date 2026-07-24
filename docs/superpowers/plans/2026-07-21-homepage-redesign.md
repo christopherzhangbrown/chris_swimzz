@@ -331,6 +331,7 @@ git commit -m "Redesign Footer as dark circular social icon band"
 
 - [ ] **Step 1: Create `app/components/home/HeroSection.tsx`**
 
+{% raw %}
 ```tsx
 "use client"
 
@@ -385,6 +386,7 @@ export default function HeroSection() {
   )
 }
 ```
+{% endraw %}
 
 - [ ] **Step 2: Verify it compiles**
 
