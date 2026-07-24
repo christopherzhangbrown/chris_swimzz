@@ -4,6 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { Reveal } from "@/app/components/motion/Reveal"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
@@ -42,16 +43,16 @@ export default function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-[76px] px-6 pb-[120px]">
       <div className="mx-auto max-w-[560px]">
-        <div className="mb-14">
+        <Reveal className="mb-14">
           <div className="mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
             LET&apos;S TALK
           </div>
           <h2 className="m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
             GET IN TOUCH
           </h2>
-        </div>
+        </Reveal>
 
-        <div>
+        <Reveal delay={0.1}>
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
               name="name"
@@ -95,7 +96,7 @@ export default function ContactSection() {
               chrisswimzzinquires@gmail.com
             </a>
           </p>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

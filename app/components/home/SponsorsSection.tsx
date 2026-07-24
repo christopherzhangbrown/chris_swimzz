@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
 
 const sponsors = [
   {
@@ -81,52 +82,50 @@ export default function SponsorsSection() {
   return (
     <section id="sponsors" className="scroll-mt-[76px] px-6 pb-[120px]">
       <div className="mx-auto max-w-[1280px]">
-        <div className="mb-14">
+        <Reveal className="mb-14">
           <div className="mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
             WHO BACKS THE JOURNEY
           </div>
           <h2 className="m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
             SPONSORS
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5">
+        <RevealStagger className="mx-auto max-w-[880px]" staggerDelay={0.08}>
           {visibleSponsors.map((sponsor) => (
-            <div
-              key={sponsor.name}
-              className="flex flex-col gap-4 rounded-[20px] border border-white/[0.08] bg-white/[0.03] p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-white/30 hover:shadow-[0_20px_40px_rgba(255,255,255,0.1)]"
-            >
-              <div className="flex h-12 items-center">
-                <Image
-                  src={sponsor.logo}
-                  alt={`${sponsor.name} logo`}
-                  width={160}
-                  height={64}
-                  className="h-full w-auto object-contain [filter:brightness(0)_invert(1)] opacity-90"
-                />
-              </div>
-              <div className="font-[family-name:var(--font-big-shoulders)] text-[20px] font-extrabold">
-                {sponsor.name}
-              </div>
-              <div className="text-[12px] font-medium tracking-[0.08em] text-white/50">
-                {sponsor.category.toUpperCase()}
-              </div>
-              {sponsor.code && (
-                <div className="text-[12px] font-bold tracking-[0.05em] text-white/70">
-                  CODE {sponsor.code} — {sponsor.codeDescription}
-                </div>
-              )}
+            <RevealItem key={sponsor.name}>
               <a
                 href={sponsor.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto text-[12px] font-bold tracking-[0.08em] text-white"
+                className="group flex items-center gap-6 border-b border-white/[0.08] py-6 transition-colors duration-300 hover:bg-white/[0.02]"
               >
-                VISIT SITE →
+                <div className="flex h-9 w-24 shrink-0 items-center">
+                  <Image
+                    src={sponsor.logo}
+                    alt={`${sponsor.name} logo`}
+                    width={140}
+                    height={56}
+                    className="h-full w-auto object-contain object-left [filter:brightness(0)_invert(1)] opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:[filter:none]"
+                  />
+                </div>
+                <div className="flex-1">
+                  <div className="font-[family-name:var(--font-big-shoulders)] text-[18px] font-extrabold uppercase tracking-[0.01em]">
+                    {sponsor.name}
+                  </div>
+                  {sponsor.code && (
+                    <div className="mt-1 font-[family-name:var(--font-jetbrains-mono)] text-[11px] tracking-[0.04em] text-white/50">
+                      CODE {sponsor.code} — {sponsor.codeDescription}
+                    </div>
+                  )}
+                </div>
+                <div className="shrink-0 text-[12px] font-bold tracking-[0.08em] text-white/40 transition-colors duration-300 group-hover:text-white">
+                  VISIT →
+                </div>
               </a>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealStagger>
       </div>
     </section>
   )
