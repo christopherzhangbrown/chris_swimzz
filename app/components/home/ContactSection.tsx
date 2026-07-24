@@ -44,7 +44,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-[76px] px-6 pb-[120px]">
       <div className="mx-auto max-w-[1280px]">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start">
           <Reveal className="relative">
             <GhostNumber number="05" />
             <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">

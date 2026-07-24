@@ -50,9 +50,8 @@ export default function AiStartSection() {
           </h2>
         </Reveal>
 
-        <RevealStagger className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_minmax(0,380px)] lg:items-center">
+        <RevealStagger className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_minmax(0,380px)] lg:items-start">
           <RevealItem className="max-w-[560px]">
-
             <p className="mb-6 text-[16px] leading-[1.7] text-white/65">
               AI-powered feedback on your dive start, in seconds. Waitlist open now — be first to try it.
             </p>
@@ -82,20 +81,35 @@ export default function AiStartSection() {
             {error && <p className="mt-3 text-[13px] text-red-400">{error}</p>}
           </RevealItem>
 
-          <RevealItem className="relative aspect-[4/5] w-full overflow-hidden rounded-[20px] border border-dashed border-white/15 bg-white/[0.02]">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="h-2/3 w-2/3 rounded-full border border-white/[0.08]" />
-              <div className="absolute h-1/3 w-1/3 rounded-full border border-white/[0.12]" />
-            </div>
-            <motion.div
-              aria-hidden="true"
-              className="absolute inset-x-6 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent"
-              initial={{ top: "20%" }}
-              animate={reduceMotion ? { top: "50%" } : { top: ["15%", "85%", "15%"] }}
-              transition={reduceMotion ? undefined : { duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            />
+          <RevealItem className="relative aspect-[4/5] w-full overflow-hidden rounded-[20px] border border-white/[0.12] bg-white/[0.02]">
             <div className="absolute right-4 top-4 rounded-full bg-white px-3.5 py-1.5 text-[11px] font-bold tracking-[0.04em] text-[#08090b]">
               WAITLIST OPEN
+            </div>
+
+            <div className="absolute inset-x-10 top-1/2 -translate-y-1/2">
+              <div className="relative h-px w-full bg-white/15">
+                <div className="absolute inset-0 flex items-center justify-between">
+                  <div className="h-3 w-px bg-white/25" />
+                  <div className="h-3 w-px bg-white/25" />
+                  <div className="h-3 w-px bg-white/25" />
+                </div>
+                <motion.div
+                  aria-hidden="true"
+                  className="absolute top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
+                  initial={{ left: "0%" }}
+                  animate={reduceMotion ? { left: "50%" } : { left: ["0%", "100%", "0%"] }}
+                  transition={reduceMotion ? undefined : { duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                />
+              </div>
+              <div className="mt-5 flex justify-between font-[family-name:var(--font-jetbrains-mono)] text-[10px] font-bold tracking-[0.1em] text-white/35">
+                <span>REACTION</span>
+                <span>ANGLE</span>
+                <span>ENTRY</span>
+              </div>
+            </div>
+
+            <div className="absolute bottom-6 left-6 right-6 font-[family-name:var(--font-jetbrains-mono)] text-[11px] tracking-[0.08em] text-white/30">
+              FRAME-BY-FRAME START ANALYSIS
             </div>
           </RevealItem>
         </RevealStagger>

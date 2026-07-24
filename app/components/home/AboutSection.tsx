@@ -5,20 +5,13 @@ export default function AboutSection() {
   return (
     <section id="about" className="scroll-mt-[76px] px-6 pb-[120px]">
       <div className="mx-auto max-w-[1280px]">
-        <RevealStagger className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,380px)_1fr] lg:items-center">
-          <RevealItem className="flex flex-col gap-4">
+        <RevealStagger className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,380px)_1fr] lg:items-start">
+          <RevealItem>
             <div className="aspect-[4/5] w-full overflow-hidden rounded-[20px]">
               <img
                 src="/images/IMG_8018.JPG"
                 alt="Chris mid-race at a swim meet"
                 className="h-full w-full object-cover [filter:grayscale(1)_contrast(1.1)_brightness(0.9)]"
-              />
-            </div>
-            <div className="aspect-[4/5] w-[55%] overflow-hidden rounded-[20px]">
-              <img
-                src="/images/medalpicoutlined.png"
-                alt="Chris wearing a swim medal"
-                className="h-full w-full object-cover object-top [filter:grayscale(1)_contrast(1.1)_brightness(0.9)]"
               />
             </div>
           </RevealItem>
