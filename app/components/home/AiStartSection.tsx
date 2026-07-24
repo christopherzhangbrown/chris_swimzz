@@ -4,6 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import { motion, useReducedMotion } from "framer-motion"
 import { Input } from "@/components/ui/input"
+import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
 import GhostNumber from "./GhostNumber"
 
 export default function AiStartSection() {
@@ -39,17 +40,18 @@ export default function AiStartSection() {
   return (
     <section id="ai-start" className="scroll-mt-[76px] px-6 pb-[120px]">
       <div className="mx-auto max-w-[1280px]">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_minmax(0,380px)] lg:items-center">
-          <div className="max-w-[560px]">
-            <div className="relative mb-14">
-              <GhostNumber number="04" />
-              <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
-                COMING SOON — 04
-              </div>
-              <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
-                AI START ANALYZER
-              </h2>
-            </div>
+        <Reveal className="relative mb-14">
+          <GhostNumber number="04" />
+          <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
+            COMING SOON — 04
+          </div>
+          <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+            AI START ANALYZER
+          </h2>
+        </Reveal>
+
+        <RevealStagger className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_minmax(0,380px)] lg:items-center">
+          <RevealItem className="max-w-[560px]">
 
             <p className="mb-6 text-[16px] leading-[1.7] text-white/65">
               AI-powered feedback on your dive start, in seconds. Waitlist open now — be first to try it.
@@ -78,9 +80,9 @@ export default function AiStartSection() {
               </p>
             )}
             {error && <p className="mt-3 text-[13px] text-red-400">{error}</p>}
-          </div>
+          </RevealItem>
 
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[20px] border border-dashed border-white/15 bg-white/[0.02]">
+          <RevealItem className="relative aspect-[4/5] w-full overflow-hidden rounded-[20px] border border-dashed border-white/15 bg-white/[0.02]">
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="h-2/3 w-2/3 rounded-full border border-white/[0.08]" />
               <div className="absolute h-1/3 w-1/3 rounded-full border border-white/[0.12]" />
@@ -95,8 +97,8 @@ export default function AiStartSection() {
             <div className="absolute right-4 top-4 rounded-full bg-white px-3.5 py-1.5 text-[11px] font-bold tracking-[0.04em] text-[#08090b]">
               WAITLIST OPEN
             </div>
-          </div>
-        </div>
+          </RevealItem>
+        </RevealStagger>
       </div>
     </section>
   )

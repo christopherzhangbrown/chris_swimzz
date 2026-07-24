@@ -102,7 +102,7 @@ export default function SponsorsSection() {
                 rel="noopener noreferrer"
                 className="group flex items-center gap-6 border-b border-white/[0.08] py-6 transition-colors duration-300 hover:bg-white/[0.02]"
               >
-                <div className="w-8 shrink-0 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.04em] text-white/30">
+                <div aria-hidden="true" className="w-8 shrink-0 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.04em] text-white/30">
                   {String(index + 1).padStart(2, "0")}
                 </div>
                 <div className="flex h-9 w-24 shrink-0 items-center">
