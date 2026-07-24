@@ -25,7 +25,7 @@ export default function PopularContent() {
       <div className="mx-auto max-w-[1280px]">
         <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
           <div>
-            <div className="mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-[#2f6bff]">
+            <div className="mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
               MOST WATCHED
             </div>
             <h2 className="m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
@@ -36,7 +36,7 @@ export default function PopularContent() {
             href="https://www.instagram.com/chris_swimzz/"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-b border-white/35 pb-1 text-[14px] font-bold tracking-[0.03em] text-white transition-colors duration-300 hover:border-[#2f6bff] hover:text-[#2f6bff]"
+            className="border-b border-white/35 pb-1 text-[14px] font-bold tracking-[0.03em] text-white/80 transition-colors duration-300 hover:border-white hover:text-white"
           >
             VIEW ALL ON INSTAGRAM →
           </a>
@@ -49,7 +49,7 @@ export default function PopularContent() {
               href={video.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative block aspect-[4/5] overflow-hidden rounded-[20px] bg-white/[0.03] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(47,107,255,0.25)]"
+              className="group relative block aspect-[4/5] overflow-hidden rounded-[20px] bg-white/[0.03] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,255,255,0.12)]"
             >
               <img
                 src={video.image}
@@ -61,7 +61,7 @@ export default function PopularContent() {
                 <div className="ml-0.5 h-0 w-0 border-y-[7px] border-l-[11px] border-y-transparent border-l-white" />
               </div>
               <div className="absolute bottom-5 left-5 right-5">
-                <div className="mb-2 text-[11px] font-bold tracking-[0.12em] text-[#2f6bff]">{video.views}</div>
+                <div className="mb-2 text-[11px] font-bold tracking-[0.12em] text-white/55">{video.views}</div>
                 <div className="font-[family-name:var(--font-big-shoulders)] text-[22px] font-extrabold">
                   {video.title}
                 </div>

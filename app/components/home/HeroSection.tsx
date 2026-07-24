@@ -23,11 +23,17 @@ export default function HeroSection() {
             transform: `scale(1.08) translate(${pos.x * -10}px, ${pos.y * -10}px)`,
           }}
         >
-          <img
-            src="/images/blackwhitebrownborder.png"
-            alt="Chris Zhang"
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster="/images/blackwhitebrownborder.png"
             className="h-full w-full object-cover object-[50%_30%] [filter:grayscale(1)_contrast(1.1)_brightness(0.9)]"
-          />
+          >
+            <source src="/videos/hero.mp4" type="video/mp4" />
+          </video>
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,9,11,0.35)_0%,transparent_30%,transparent_55%,#08090b_100%)]" />
       </div>
@@ -41,7 +47,7 @@ export default function HeroSection() {
             href="https://www.instagram.com/chris_swimzz/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 border-b border-white/40 pb-1.5 text-[14px] font-bold tracking-[0.03em] text-white transition-colors duration-300 hover:border-[#2f6bff] hover:text-[#2f6bff]"
+            className="inline-flex items-center gap-2.5 border-b border-white/40 pb-1.5 text-[14px] font-bold tracking-[0.03em] text-white/80 transition-colors duration-300 hover:border-white hover:text-white"
           >
             WATCH ON INSTAGRAM →
           </a>

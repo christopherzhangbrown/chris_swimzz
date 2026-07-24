@@ -82,7 +82,7 @@ export default function SponsorsSection() {
     <section id="sponsors" className="scroll-mt-[76px] px-6 pb-[120px]">
       <div className="mx-auto max-w-[1280px]">
         <div className="mb-14">
-          <div className="mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-[#2f6bff]">
+          <div className="mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
             WHO BACKS THE JOURNEY
           </div>
           <h2 className="m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
@@ -94,15 +94,15 @@ export default function SponsorsSection() {
           {visibleSponsors.map((sponsor) => (
             <div
               key={sponsor.name}
-              className="flex flex-col gap-4 rounded-[20px] border border-white/[0.08] bg-white/[0.03] p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#2f6bff]/40 hover:shadow-[0_20px_40px_rgba(47,107,255,0.2)]"
+              className="flex flex-col gap-4 rounded-[20px] border border-white/[0.08] bg-white/[0.03] p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-white/30 hover:shadow-[0_20px_40px_rgba(255,255,255,0.1)]"
             >
-              <div className="flex h-16 items-center rounded-lg bg-white p-4">
+              <div className="flex h-12 items-center">
                 <Image
                   src={sponsor.logo}
                   alt={`${sponsor.name} logo`}
                   width={160}
                   height={64}
-                  className="h-full w-auto object-contain"
+                  className="h-full w-auto object-contain [filter:brightness(0)_invert(1)] opacity-90"
                 />
               </div>
               <div className="font-[family-name:var(--font-big-shoulders)] text-[20px] font-extrabold">
@@ -112,7 +112,7 @@ export default function SponsorsSection() {
                 {sponsor.category.toUpperCase()}
               </div>
               {sponsor.code && (
-                <div className="text-[12px] font-bold tracking-[0.05em] text-[#2f6bff]">
+                <div className="text-[12px] font-bold tracking-[0.05em] text-white/70">
                   CODE {sponsor.code} — {sponsor.codeDescription}
                 </div>
               )}

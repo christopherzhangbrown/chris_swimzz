@@ -48,31 +48,31 @@ export default function StatBand() {
     <section ref={sectionRef} className="px-6 pb-[88px] pt-16">
       <div className="mx-auto grid max-w-[1280px] grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8 text-center">
         <div>
-          <div className="font-[family-name:var(--font-big-shoulders)] text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white [text-shadow:0_0_24px_rgba(47,107,255,0.3)]">
-            {followers}K<span className="text-[#2f6bff]">+</span>
+          <div className="font-[family-name:var(--font-big-shoulders)] text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
+            {followers}K<span className="text-white/40">+</span>
           </div>
           <div className="mt-3 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-medium tracking-[0.14em] text-white/60">
             INSTAGRAM FOLLOWERS
           </div>
         </div>
         <div>
-          <div className="font-[family-name:var(--font-big-shoulders)] text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white [text-shadow:0_0_24px_rgba(47,107,255,0.3)]">
-            {views}K<span className="text-[#2f6bff]">+</span>
+          <div className="font-[family-name:var(--font-big-shoulders)] text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
+            {views}K<span className="text-white/40">+</span>
           </div>
           <div className="mt-3 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-medium tracking-[0.14em] text-white/50">
             TOTAL VIEWS ACROSS TOP CLIPS
           </div>
         </div>
         <div>
-          <div className="font-[family-name:var(--font-big-shoulders)] text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white [text-shadow:0_0_24px_rgba(47,107,255,0.3)]">
-            {years}<span className="text-[#2f6bff]">+</span>
+          <div className="font-[family-name:var(--font-big-shoulders)] text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
+            {years}<span className="text-white/40">+</span>
           </div>
           <div className="mt-3 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-medium tracking-[0.14em] text-white/50">
             YEARS COMPETITIVE SWIMMING
           </div>
         </div>
         <div>
-          <div className="font-[family-name:var(--font-big-shoulders)] text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white [text-shadow:0_0_24px_rgba(47,107,255,0.3)]">
+          <div className="font-[family-name:var(--font-big-shoulders)] text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
             D1
           </div>
           <div className="mt-3 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-medium tracking-[0.14em] text-white/50">

@@ -13,7 +13,7 @@ export default function CtaBand() {
             href="https://www.instagram.com/chris_swimzz/"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-[#2f6bff] px-8 py-[17px] text-[14px] font-bold tracking-[0.03em] text-white transition-colors duration-300 hover:bg-[#1a55e6]"
+            className="rounded-full bg-white px-8 py-[17px] text-[14px] font-bold tracking-[0.03em] text-[#08090b] transition-colors duration-300 hover:bg-white/85"
           >
             FOLLOW ON INSTAGRAM →
           </a>
