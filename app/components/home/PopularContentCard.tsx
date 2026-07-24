@@ -31,7 +31,7 @@ export default function PopularContentCard({ video }: { video: Video }) {
         src={video.image}
         alt={video.title}
         style={{ y }}
-        className="absolute inset-[-8%] h-[116%] w-full object-cover [filter:grayscale(0.3)_contrast(1.05)] transition-transform duration-500 ease-out group-hover:scale-105"
+        className="absolute inset-[-8%] object-cover [filter:grayscale(0.3)_contrast(1.05)] transition-transform duration-500 ease-out group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_40%,rgba(0,0,0,0.9)_100%)]" />
       <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-[#08090b]/60">
