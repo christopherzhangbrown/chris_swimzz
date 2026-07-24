@@ -11,6 +11,7 @@ export default function Header() {
     { name: "HOME", href: "/" },
     { name: "ABOUT", href: "/#about" },
     { name: "SPONSORS", href: "/#sponsors" },
+    { name: "AI START", href: "/#ai-start" },
     { name: "CONTACT", href: "/#contact" },
   ]
 
@@ -34,7 +35,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-[13px] font-semibold tracking-[0.04em] transition-colors duration-200 ${
+                className={`font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.08em] transition-colors duration-200 ${
                   item.name === "HOME" ? "text-white" : "text-white/60 hover:text-white"
                 }`}
               >
@@ -62,7 +63,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block text-[13px] font-semibold tracking-[0.04em] text-white/70 transition-colors duration-200 hover:text-white"
+                  className="block font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.08em] text-white/70 transition-colors duration-200 hover:text-white"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

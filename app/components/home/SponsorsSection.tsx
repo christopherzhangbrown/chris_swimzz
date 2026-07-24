@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
+import GhostNumber from "./GhostNumber"
 
 const sponsors = [
   {
@@ -82,44 +83,48 @@ export default function SponsorsSection() {
   return (
     <section id="sponsors" className="scroll-mt-[76px] px-6 pb-[120px]">
       <div className="mx-auto max-w-[1280px]">
-        <Reveal className="mb-14">
-          <div className="mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
-            WHO BACKS THE JOURNEY
+        <Reveal className="relative mb-14">
+          <GhostNumber number="03" />
+          <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
+            WHO BACKS THE JOURNEY — 03
           </div>
-          <h2 className="m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+          <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
             SPONSORS
           </h2>
         </Reveal>
 
-        <RevealStagger className="mx-auto max-w-[880px]" staggerDelay={0.08}>
-          {visibleSponsors.map((sponsor) => (
+        <RevealStagger staggerDelay={0.08}>
+          {visibleSponsors.map((sponsor, index) => (
             <RevealItem key={sponsor.name}>
               <a
                 href={sponsor.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-6 border-b border-white/[0.08] py-6 transition-colors duration-300 hover:bg-white/[0.02]"
+                className="group flex items-center gap-8 border-b border-white/[0.08] py-10 transition-colors duration-300 hover:bg-white/[0.02]"
               >
-                <div className="flex h-9 w-24 shrink-0 items-center">
+                <div aria-hidden="true" className="w-12 shrink-0 font-[family-name:var(--font-jetbrains-mono)] text-[16px] font-bold tracking-[0.04em] text-white/30">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+                <div className="flex h-16 w-44 shrink-0 items-center">
                   <Image
                     src={sponsor.logo}
                     alt={`${sponsor.name} logo`}
-                    width={140}
-                    height={56}
-                    className="h-full w-auto object-contain object-left [filter:brightness(0)_invert(1)] opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:[filter:none]"
+                    width={220}
+                    height={90}
+                    className="h-full w-auto object-contain object-left [filter:brightness(0)_invert(1)] opacity-60 transition-opacity duration-300 group-hover:opacity-100"
                   />
                 </div>
                 <div className="flex-1">
-                  <div className="font-[family-name:var(--font-big-shoulders)] text-[18px] font-extrabold uppercase tracking-[0.01em]">
+                  <div className="font-[family-name:var(--font-big-shoulders)] text-[32px] font-extrabold uppercase leading-none tracking-[0.01em]">
                     {sponsor.name}
                   </div>
                   {sponsor.code && (
-                    <div className="mt-1 font-[family-name:var(--font-jetbrains-mono)] text-[11px] tracking-[0.04em] text-white/50">
+                    <div className="mt-2 font-[family-name:var(--font-jetbrains-mono)] text-[11px] tracking-[0.04em] text-white/50">
                       CODE {sponsor.code} — {sponsor.codeDescription}
                     </div>
                   )}
                 </div>
-                <div className="shrink-0 text-[12px] font-bold tracking-[0.08em] text-white/40 transition-colors duration-300 group-hover:text-white">
+                <div className="shrink-0 font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.08em] text-white/40 transition-colors duration-300 group-hover:text-white">
                   VISIT →
                 </div>
               </a>
