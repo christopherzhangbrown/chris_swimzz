@@ -6,7 +6,6 @@ import AboutSection from "./components/home/AboutSection"
 import SponsorsSection from "./components/home/SponsorsSection"
 import AiStartSection from "./components/home/AiStartSection"
 import ContactSection from "./components/home/ContactSection"
-import CtaBand from "./components/home/CtaBand"
 
 export default function HomePage() {
   return (
@@ -19,7 +18,6 @@ export default function HomePage() {
       <SponsorsSection />
       <AiStartSection />
       <ContactSection />
-      <CtaBand />
     </div>
   )
 }

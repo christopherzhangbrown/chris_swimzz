@@ -41,7 +41,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="scroll-mt-[76px] px-6 pb-[120px]">
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[560px]">
         <div className="mb-14">
           <div className="mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
             LET&apos;S TALK
@@ -51,7 +51,7 @@ export default function ContactSection() {
           </h2>
         </div>
 
-        <div className="max-w-[560px]">
+        <div>
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
               name="name"

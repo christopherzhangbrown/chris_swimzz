@@ -35,7 +35,7 @@ export default function AiStartSection() {
 
   return (
     <section id="ai-start" className="scroll-mt-[76px] px-6 pb-[120px]">
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[560px]">
         <div className="mb-14">
           <div className="mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
             COMING SOON
@@ -45,7 +45,7 @@ export default function AiStartSection() {
           </h2>
         </div>
 
-        <div className="max-w-[520px]">
+        <div>
           <p className="mb-6 text-[16px] leading-[1.7] text-white/65">
             AI-powered feedback on your dive start, in seconds. Waitlist open now — be first to try it.
           </p>
