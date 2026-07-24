@@ -1,14 +1,16 @@
 import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
+import GhostNumber from "./GhostNumber"
 
 export default function AboutSection() {
   return (
     <section id="about" className="scroll-mt-[76px] px-6 pb-[120px]">
       <div className="mx-auto max-w-[1280px]">
-        <Reveal className="mb-14">
-          <div className="mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
-            WHO I AM
+        <Reveal className="relative mb-14">
+          <GhostNumber number="01" />
+          <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
+            WHO I AM — 01
           </div>
-          <h2 className="m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+          <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
             MY STORY
           </h2>
         </Reveal>
