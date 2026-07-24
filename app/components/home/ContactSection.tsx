@@ -5,6 +5,7 @@ import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Reveal } from "@/app/components/motion/Reveal"
+import GhostNumber from "./GhostNumber"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
@@ -43,13 +44,18 @@ export default function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-[76px] px-6 pb-[120px]">
       <div className="mx-auto max-w-[560px]">
-        <Reveal className="mb-14">
-          <div className="mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
-            LET&apos;S TALK
+        <Reveal className="relative mb-14">
+          <GhostNumber number="05" />
+          <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
+            LET&apos;S TALK — 05
           </div>
-          <h2 className="m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+          <h2 className="relative z-10 m-0 flex items-center gap-4 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
             GET IN TOUCH
+            <span aria-hidden="true" className="text-white/50">
+              →
+            </span>
           </h2>
+          <div className="relative z-10 mt-8 h-px w-full bg-white/10" />
         </Reveal>
 
         <Reveal delay={0.1}>
