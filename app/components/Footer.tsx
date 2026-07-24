@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="overflow-hidden px-6 pb-14 pt-12">
       <Reveal className="mx-auto max-w-[1280px]">
-        <div className="mb-8 select-none font-[family-name:var(--font-big-shoulders)] text-[clamp(48px,10vw,140px)] font-extrabold leading-none tracking-[-0.01em] text-white/[0.04]">
+        <div className="mb-8 select-none font-[family-name:var(--font-big-shoulders)] text-[clamp(48px,10vw,140px)] font-extrabold leading-none tracking-[-0.01em] text-white/[0.04]" aria-hidden="true">
           CHRIS SWIMZZ
         </div>
         <div className="flex flex-wrap items-center justify-between gap-6">

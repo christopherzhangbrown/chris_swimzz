@@ -18,7 +18,7 @@ function MarqueeTrack() {
 export default function SectionDivider() {
   return (
     <div className="overflow-hidden border-y border-white/10 py-4">
-      <div className="flex w-max animate-marquee motion-reduce:animate-none">
+      <div className="flex w-max animate-marquee motion-reduce:animate-none" aria-hidden="true">
         <MarqueeTrack />
         <MarqueeTrack />
       </div>

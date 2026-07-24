@@ -1,5 +1,5 @@
 import PopularContentCard from "./PopularContentCard"
-import { RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
+import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
 
 const videos = [
   {
@@ -26,7 +26,7 @@ export default function PopularContent() {
   return (
     <section className="px-6 pb-[100px]">
       <div className="mx-auto max-w-[1280px]">
-        <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
+        <Reveal className="mb-14 flex flex-wrap items-end justify-between gap-6">
           <div>
             <div className="mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
               MOST WATCHED
@@ -43,7 +43,7 @@ export default function PopularContent() {
           >
             VIEW ALL ON INSTAGRAM →
           </a>
-        </div>
+        </Reveal>
 
         <RevealStagger className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-7">
           {videos.map((video) => (

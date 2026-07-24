@@ -27,12 +27,13 @@ export default function PopularContentCard({ video }: { video: Video }) {
       rel="noopener noreferrer"
       className="group relative block aspect-[4/5] overflow-hidden rounded-[20px] bg-white/[0.03] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,255,255,0.12)]"
     >
-      <motion.img
-        src={video.image}
-        alt={video.title}
-        style={{ y }}
-        className="absolute inset-[-8%] object-cover [filter:grayscale(0.3)_contrast(1.05)] transition-transform duration-500 ease-out group-hover:scale-105"
-      />
+      <motion.div style={{ y }} className="absolute inset-[-8%] overflow-hidden">
+        <img
+          src={video.image}
+          alt={video.title}
+          className="h-full w-full object-cover [filter:grayscale(0.3)_contrast(1.05)] transition-transform duration-500 ease-out group-hover:scale-105"
+        />
+      </motion.div>
       <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_40%,rgba(0,0,0,0.9)_100%)]" />
       <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-[#08090b]/60">
         <div className="ml-0.5 h-0 w-0 border-y-[7px] border-l-[11px] border-y-transparent border-l-white" />
