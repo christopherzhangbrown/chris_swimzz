@@ -42,16 +42,6 @@ export default function HeroSection() {
         <h1 className="m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(64px,13vw,180px)] font-extrabold leading-[0.86] tracking-[-0.01em] [text-shadow:0_4px_24px_rgba(0,0,0,0.5)]">
           CHRIS SWIMZZ
         </h1>
-        <div className="mt-6">
-          <a
-            href="https://www.instagram.com/chris_swimzz/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 border-b border-white/40 pb-1.5 font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-white/80 transition-colors duration-300 hover:border-white hover:text-white"
-          >
-            WATCH ON INSTAGRAM →
-          </a>
-        </div>
       </div>
     </section>
   )
