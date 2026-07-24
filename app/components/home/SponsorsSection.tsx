@@ -119,7 +119,7 @@ export default function SponsorsSection() {
                     {sponsor.name}
                   </div>
                   {sponsor.code && (
-                    <div className="mt-2 font-[family-name:var(--font-jetbrains-mono)] text-[13px] tracking-[0.04em] text-white/50">
+                    <div className="mt-2 font-[family-name:var(--font-jetbrains-mono)] text-[11px] tracking-[0.04em] text-white/50">
                       CODE {sponsor.code} — {sponsor.codeDescription}
                     </div>
                   )}

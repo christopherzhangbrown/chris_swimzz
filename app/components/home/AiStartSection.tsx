@@ -68,7 +68,7 @@ export default function AiStartSection() {
                 />
                 <button
                   type="submit"
-                  className="group flex items-center gap-3 font-[family-name:var(--font-jetbrains-mono)] text-[14px] font-bold tracking-[0.06em] text-white"
+                  className="group flex items-center gap-3 font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-white"
                 >
                   JOIN WAITLIST
                   <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
@@ -106,14 +106,14 @@ export default function AiStartSection() {
                   transition={reduceMotion ? undefined : { duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 />
               </div>
-              <div className="mt-5 flex justify-between font-[family-name:var(--font-jetbrains-mono)] text-[10px] font-bold tracking-[0.1em] text-white/35">
+              <div className="mt-5 flex justify-between font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-bold tracking-[0.1em] text-white/35">
                 <span>REACTION</span>
                 <span>ANGLE</span>
                 <span>ENTRY</span>
               </div>
             </div>
 
-            <div className="absolute bottom-6 left-6 right-6 font-[family-name:var(--font-jetbrains-mono)] text-[11px] tracking-[0.08em] text-white/30">
+            <div className="absolute inset-x-10 bottom-6 text-center font-[family-name:var(--font-jetbrains-mono)] text-[11px] tracking-[0.08em] text-white/30">
               FRAME-BY-FRAME START ANALYSIS
             </div>
           </RevealItem>
