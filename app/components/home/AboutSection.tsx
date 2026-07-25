@@ -19,7 +19,7 @@ export default function AboutSection() {
           <RevealItem className="max-w-[640px]">
             <div className="relative mb-8">
               <GhostNumber number="01" />
-              <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
+              <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/60">
                 WHO I AM
               </div>
               <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">

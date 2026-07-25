@@ -42,7 +42,7 @@ export default function AiStartSection() {
       <div className="mx-auto max-w-[1280px]">
         <Reveal className="relative mb-14">
           <GhostNumber number="04" />
-          <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
+          <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/60">
             COMING SOON
           </div>
           <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
