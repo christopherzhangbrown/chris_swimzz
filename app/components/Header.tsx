@@ -15,6 +15,15 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  useEffect(() => {
+    if (!isMenuOpen) return
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsMenuOpen(false)
+    }
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [isMenuOpen])
+
   const navItems = [
     { name: "HOME", href: "/" },
     { name: "ABOUT", href: "/#about" },
@@ -60,6 +69,8 @@ export default function Header() {
             className="p-2 text-white md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -67,7 +78,7 @@ export default function Header() {
       </header>
 
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 md:hidden">
+        <div id="mobile-menu" className="fixed inset-0 z-40 md:hidden">
           <div className="fixed inset-0 bg-black/60" onClick={() => setIsMenuOpen(false)} />
           <div className="fixed left-0 right-0 top-[76px] border-b border-white/10 bg-[#08090b]/95 backdrop-blur-sm">
             <nav className="space-y-4 px-6 py-6">
