@@ -25,12 +25,34 @@ export default function Header() {
   }, [isMenuOpen])
 
   const navItems = [
-    { name: "HOME", href: "/" },
-    { name: "ABOUT", href: "/#about" },
-    { name: "SPONSORS", href: "/#sponsors" },
-    { name: "AI START", href: "/#ai-start" },
-    { name: "CONTACT", href: "/#contact" },
+    { name: "HOME", id: "home", href: "/" },
+    { name: "ABOUT", id: "about", href: "/#about" },
+    { name: "SPONSORS", id: "sponsors", href: "/#sponsors" },
+    { name: "AI START", id: "ai-start", href: "/#ai-start" },
+    { name: "CONTACT", id: "contact", href: "/#contact" },
   ]
+
+  const [activeId, setActiveId] = useState("home")
+
+  useEffect(() => {
+    const sections = navItems
+      .map((item) => document.getElementById(item.id))
+      .filter((el): el is HTMLElement => el !== null)
+    if (sections.length === 0) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting)
+        if (visible.length > 0) {
+          setActiveId(visible[0].target.id)
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    )
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>
@@ -56,8 +78,9 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
+                aria-current={item.id === activeId ? "true" : undefined}
                 className={`font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.08em] transition-colors duration-200 ${
-                  item.name === "HOME" ? "text-white" : "text-white/60 hover:text-white"
+                  item.id === activeId ? "text-white" : "text-white/60 hover:text-white"
                 }`}
               >
                 {item.name}
