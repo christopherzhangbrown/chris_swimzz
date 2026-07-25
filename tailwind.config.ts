@@ -93,22 +93,12 @@ const config: Config = {
   				to: {
   					transform: 'translateX(-50%)'
   				}
-  			},
-  			'glow-drift-a': {
-  				'0%, 100%': { transform: 'translate(0, 0) scale(1)' },
-  				'50%': { transform: 'translate(4%, 6%) scale(1.12)' }
-  			},
-  			'glow-drift-b': {
-  				'0%, 100%': { transform: 'translate(0, 0) scale(1)' },
-  				'50%': { transform: 'translate(-5%, -4%) scale(1.08)' }
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-  			marquee: 'marquee 24s linear infinite',
-  			'glow-drift-a': 'glow-drift-a 34s ease-in-out infinite',
-  			'glow-drift-b': 'glow-drift-b 42s ease-in-out infinite'
+  			marquee: 'marquee 24s linear infinite'
   		}
   	}
   },
