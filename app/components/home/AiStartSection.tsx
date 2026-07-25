@@ -42,7 +42,7 @@ export default function AiStartSection() {
       <div className="mx-auto max-w-[1280px]">
         <Reveal className="relative mb-14">
           <GhostNumber number="04" />
-          <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
+          <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/60">
             COMING SOON
           </div>
           <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
@@ -58,13 +58,17 @@ export default function AiStartSection() {
 
             {!isSubmitted ? (
               <form onSubmit={handleSubmit} className="space-y-8">
+                <label htmlFor="waitlist-email" className="sr-only">
+                  Your email
+                </label>
                 <Input
+                  id="waitlist-email"
                   type="email"
                   placeholder="you@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="h-auto w-full rounded-none border-0 border-b border-white/15 bg-transparent px-0 py-3 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-white/50"
+                  className="h-auto w-full rounded-none border-0 border-b border-white/15 bg-transparent px-0 py-3 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-white focus-visible:shadow-[inset_0_-2px_0_0_white]"
                 />
                 <button
                   type="submit"
@@ -77,11 +81,18 @@ export default function AiStartSection() {
                 </button>
               </form>
             ) : (
-              <p className="font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-white">
+              <p
+                role="status"
+                className="font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-white"
+              >
                 You&apos;re on the list — we&apos;ll email you when it&apos;s ready.
               </p>
             )}
-            {error && <p className="mt-3 text-[13px] text-red-400">{error}</p>}
+            {error && (
+              <p role="alert" className="mt-3 text-[13px] text-red-400">
+                {error}
+              </p>
+            )}
           </RevealItem>
 
           <div aria-hidden="true" className="hidden self-stretch border-l border-dashed border-white/15 lg:block" />

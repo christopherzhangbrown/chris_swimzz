@@ -7,6 +7,9 @@ import { Textarea } from "@/components/ui/textarea"
 import { Reveal } from "@/app/components/motion/Reveal"
 import GhostNumber from "./GhostNumber"
 
+const FIELD_CLASSNAME =
+  "h-auto w-full rounded-none border-0 border-b border-white/15 bg-transparent px-0 py-3 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-white focus-visible:shadow-[inset_0_-2px_0_0_white]"
+
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [error, setError] = useState("")
@@ -47,7 +50,7 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start">
           <Reveal className="relative">
             <GhostNumber number="05" />
-            <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
+            <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/60">
               LET&apos;S TALK
             </div>
             <h2 className="relative z-10 m-0 flex items-center gap-4 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
@@ -70,40 +73,66 @@ export default function ContactSection() {
 
           <Reveal delay={0.1}>
             <form onSubmit={handleSubmit} className="space-y-8">
-              <Input
-                name="name"
-                type="text"
-                placeholder="Your name"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                className="h-auto w-full rounded-none border-0 border-b border-white/15 bg-transparent px-0 py-3 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-white/50"
-              />
-              <Input
-                name="email"
-                type="email"
-                placeholder="your.email@example.com"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                className="h-auto w-full rounded-none border-0 border-b border-white/15 bg-transparent px-0 py-3 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-white/50"
-              />
-              <Textarea
-                name="message"
-                placeholder="Tell me about your inquiry, collaboration idea, or just say hello!"
-                required
-                value={formData.message}
-                onChange={handleChange}
-                className="min-h-[100px] w-full resize-none rounded-none border-0 border-b border-white/15 bg-transparent px-0 py-3 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-white/50"
-              />
+              <div>
+                <label htmlFor="contact-name" className="sr-only">
+                  Your name
+                </label>
+                <Input
+                  id="contact-name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  className={FIELD_CLASSNAME}
+                />
+              </div>
+              <div>
+                <label htmlFor="contact-email" className="sr-only">
+                  Your email
+                </label>
+                <Input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  placeholder="your.email@example.com"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={FIELD_CLASSNAME}
+                />
+              </div>
+              <div>
+                <label htmlFor="contact-message" className="sr-only">
+                  Your message
+                </label>
+                <Textarea
+                  id="contact-message"
+                  name="message"
+                  placeholder="Tell me about your inquiry, collaboration idea, or just say hello!"
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
+                  className={`min-h-[100px] resize-none ${FIELD_CLASSNAME}`}
+                />
+              </div>
               <button
                 type="submit"
                 className="h-[52px] w-full rounded-full bg-white font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-[#08090b] transition-colors duration-300 hover:bg-white/85 sm:w-auto sm:px-8"
               >
                 SEND MESSAGE →
               </button>
-              {success && <p className="text-[13px] text-white">Message sent! I&apos;ll get back to you soon.</p>}
-              {error && <p className="text-[13px] text-red-400">{error}</p>}
+              {success && (
+                <p role="status" className="text-[13px] text-white">
+                  Message sent! I&apos;ll get back to you soon.
+                </p>
+              )}
+              {error && (
+                <p role="alert" className="text-[13px] text-red-400">
+                  {error}
+                </p>
+              )}
             </form>
           </Reveal>
         </div>

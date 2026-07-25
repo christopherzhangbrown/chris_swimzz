@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { SiInstagram, SiTiktok, SiYoutube, SiFacebook } from "react-icons/si"
 import { Reveal } from "@/app/components/motion/Reveal"
 
@@ -14,12 +15,14 @@ export default function Footer() {
     <footer className="overflow-hidden px-6 pb-14 pt-12">
       <Reveal className="mx-auto max-w-[1280px]">
         <div className="flex flex-wrap items-center justify-between gap-6">
-          <div className="text-[13px] text-white/40">© 2026 Christopher Zhang. All rights reserved.</div>
+          <div className="text-[13px] text-white/60">© 2026 Christopher Zhang. All rights reserved.</div>
 
           <div className="flex items-center gap-3">
-            <img
+            <Image
               src="/images/logos/logowhiteimg.png"
               alt=""
+              width={72}
+              height={72}
               className="h-[36px] w-auto [filter:brightness(0)_invert(1)]"
             />
             <span className="font-[family-name:var(--font-big-shoulders)] text-[15px] font-extrabold tracking-[0.06em]">

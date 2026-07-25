@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
 import GhostNumber from "./GhostNumber"
 
@@ -7,11 +8,13 @@ export default function AboutSection() {
       <div className="mx-auto max-w-[1280px]">
         <RevealStagger className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,380px)_1fr] lg:items-start">
           <RevealItem>
-            <div className="aspect-[4/5] w-full overflow-hidden rounded-[20px]">
-              <img
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[20px]">
+              <Image
                 src="/images/IMG_8018.JPG"
                 alt="Chris mid-race at a swim meet"
-                className="h-full w-full object-cover [filter:grayscale(1)_contrast(1.1)_brightness(0.9)]"
+                fill
+                sizes="(min-width: 1024px) 380px, 100vw"
+                className="object-cover [filter:grayscale(1)_contrast(1.1)_brightness(0.9)]"
               />
             </div>
           </RevealItem>
@@ -19,7 +22,7 @@ export default function AboutSection() {
           <RevealItem className="max-w-[640px]">
             <div className="relative mb-8">
               <GhostNumber number="01" />
-              <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/45">
+              <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/60">
                 WHO I AM
               </div>
               <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
