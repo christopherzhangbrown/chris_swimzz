@@ -1,11 +1,12 @@
 import Link from "next/link"
+import { SiInstagram, SiTiktok, SiYoutube, SiFacebook } from "react-icons/si"
 import { Reveal } from "@/app/components/motion/Reveal"
 
 const socialLinks = [
-  { label: "IG", href: "https://www.instagram.com/chris_swimzz/" },
-  { label: "TT", href: "https://www.tiktok.com/@chris_swimzz" },
-  { label: "YT", href: "https://www.youtube.com/@Chris_swimzz" },
-  { label: "FB", href: "https://www.facebook.com/profile.php?id=61560790375196" },
+  { label: "Instagram", Icon: SiInstagram, href: "https://www.instagram.com/chris_swimzz/" },
+  { label: "TikTok", Icon: SiTiktok, href: "https://www.tiktok.com/@chris_swimzz" },
+  { label: "YouTube", Icon: SiYoutube, href: "https://www.youtube.com/@Chris_swimzz" },
+  { label: "Facebook", Icon: SiFacebook, href: "https://www.facebook.com/profile.php?id=61560790375196" },
 ]
 
 export default function Footer() {
@@ -27,15 +28,16 @@ export default function Footer() {
           </div>
 
           <div className="flex gap-2.5">
-            {socialLinks.map((social) => (
+            {socialLinks.map(({ label, Icon, href }) => (
               <Link
-                key={social.label}
-                href={social.href}
+                key={label}
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-[34px] w-[34px] items-center justify-center rounded-full border border-white/20 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-bold tracking-[0.04em] text-white/60 transition-colors duration-300 hover:border-white hover:text-white"
+                aria-label={label}
+                className="flex h-[34px] w-[34px] items-center justify-center rounded-full border border-white/20 text-white/60 transition-colors duration-300 hover:border-white hover:text-white"
               >
-                {social.label}
+                <Icon className="h-4 w-4" />
               </Link>
             ))}
           </div>
