@@ -10,19 +10,22 @@ export function Reveal({
   className,
   distance = 20,
   delay = 0,
+  scale = 0.94,
 }: {
   children: ReactNode
   className?: string
   distance?: number
   delay?: number
+  scale?: number
 }) {
   const reduceMotion = useReducedMotion()
   const variants: Variants = {
-    hidden: { opacity: 0, y: reduceMotion ? 0 : distance },
+    hidden: { opacity: 0, y: reduceMotion ? 0 : distance, scale: reduceMotion ? 1 : scale },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: reduceMotion ? 0.01 : 0.6, ease: EASE, delay },
+      scale: 1,
+      transition: { duration: reduceMotion ? 0.01 : 0.7, ease: EASE, delay },
     },
   }
 
@@ -73,18 +76,21 @@ export function RevealItem({
   children,
   className,
   distance = 20,
+  scale = 0.94,
 }: {
   children: ReactNode
   className?: string
   distance?: number
+  scale?: number
 }) {
   const reduceMotion = useReducedMotion()
   const variants: Variants = {
-    hidden: { opacity: 0, y: reduceMotion ? 0 : distance },
+    hidden: { opacity: 0, y: reduceMotion ? 0 : distance, scale: reduceMotion ? 1 : scale },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: reduceMotion ? 0.01 : 0.6, ease: EASE },
+      scale: 1,
+      transition: { duration: reduceMotion ? 0.01 : 0.7, ease: EASE },
     },
   }
 
