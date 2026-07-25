@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 
@@ -63,9 +64,12 @@ export default function Header() {
       >
         <div className="mx-auto flex h-[76px] max-w-[1280px] items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-3">
-            <img
+            <Image
               src="/images/logos/logowhiteimg.png"
               alt="Chris Swimzz"
+              width={64}
+              height={64}
+              priority
               className="h-8 w-auto [filter:brightness(0)_invert(1)]"
             />
             <span className="font-[family-name:var(--font-big-shoulders)] text-[15px] font-extrabold tracking-[0.08em] text-white">

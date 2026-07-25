@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
 import GhostNumber from "./GhostNumber"
 
@@ -7,11 +8,13 @@ export default function AboutSection() {
       <div className="mx-auto max-w-[1280px]">
         <RevealStagger className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,380px)_1fr] lg:items-start">
           <RevealItem>
-            <div className="aspect-[4/5] w-full overflow-hidden rounded-[20px]">
-              <img
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[20px]">
+              <Image
                 src="/images/IMG_8018.JPG"
                 alt="Chris mid-race at a swim meet"
-                className="h-full w-full object-cover [filter:grayscale(1)_contrast(1.1)_brightness(0.9)]"
+                fill
+                sizes="(min-width: 1024px) 380px, 100vw"
+                className="object-cover [filter:grayscale(1)_contrast(1.1)_brightness(0.9)]"
               />
             </div>
           </RevealItem>
