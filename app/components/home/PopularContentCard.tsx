@@ -26,7 +26,7 @@ export default function PopularContentCard({ video }: { video: Video }) {
       href={video.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative block aspect-[4/5] overflow-hidden rounded-[20px] bg-white/[0.03] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,255,255,0.12)]"
+      className="group relative block aspect-[4/5] overflow-hidden rounded-[20px] bg-white/[0.03] transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,255,255,0.12)] motion-reduce:transition-none motion-reduce:hover:transform-none"
     >
       <motion.div style={{ y }} className="absolute inset-[-8%] overflow-hidden">
         <Image
