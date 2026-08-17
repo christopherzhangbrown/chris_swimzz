@@ -66,15 +66,6 @@ const sponsors = [
     codeDescription: null as string | null,
     hidden: true,
   },
-  {
-    name: "DripDrop",
-    logo: "/images/Sponsors/dripdroplogo.png",
-    category: "Hydration",
-    website: "https://dripdrop.com/CHRISSWIMZZ",
-    code: "CHRISSWIMZZ",
-    codeDescription: "20% off all products",
-    hidden: false,
-  },
 ]
 
 export default function SponsorsSection() {
