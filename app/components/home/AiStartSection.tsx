@@ -5,6 +5,8 @@ import { useState } from "react"
 import Image from "next/image"
 import { Input } from "@/components/ui/input"
 import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
+import { ACTION_PRIMARY, ACTION_ARROW } from "@/app/components/ui/actions"
+import { FIELD_CLASSNAME, FIELD_LABEL_CLASSNAME, EMAIL_PLACEHOLDER } from "@/app/components/ui/field"
 import GhostNumber from "./GhostNumber"
 
 export default function AiStartSection() {
@@ -41,41 +43,41 @@ export default function AiStartSection() {
       <div className="mx-auto max-w-[1280px]">
         <Reveal className="relative mb-10">
           <GhostNumber number="04" />
-          <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/60">
+          <div className="relative z-10 mb-3.5 font-mono text-[12px] font-bold tracking-eyebrow text-ink-subtle">
             COMING SOON
           </div>
-          <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+          <h2 className="relative z-10 m-0 font-display text-[clamp(32px,4vw,52px)] font-extrabold leading-none text-balance">
             SWIMVOLT
           </h2>
         </Reveal>
 
         <RevealStagger className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,340px)_minmax(0,1fr)] lg:gap-14">
           <RevealItem>
-            <p className="mb-8 text-[16px] leading-[1.7] text-white/65">
+            <p className="mb-8 text-[16px] leading-[1.7] text-ink-muted">
               Film one racing start on your phone. SwimVolt reads it frame by frame and tells you
               what to change.
             </p>
 
             {!isSubmitted ? (
               <form onSubmit={handleSubmit} className="space-y-8">
-                <label htmlFor="waitlist-email" className="sr-only">
-                  Your email
-                </label>
-                <Input
-                  id="waitlist-email"
-                  type="email"
-                  placeholder="you@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="h-auto w-full rounded-none border-0 border-b border-white/15 bg-transparent px-0 py-3 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-white focus-visible:shadow-[inset_0_-2px_0_0_white]"
-                />
-                <button
-                  type="submit"
-                  className="group flex items-center gap-3 font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-white"
-                >
+                <div>
+                  <label htmlFor="waitlist-email" className={FIELD_LABEL_CLASSNAME}>
+                    EMAIL
+                  </label>
+                  <Input
+                    id="waitlist-email"
+                    type="email"
+                    autoComplete="email"
+                    placeholder={EMAIL_PLACEHOLDER}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className={FIELD_CLASSNAME}
+                  />
+                </div>
+                <button type="submit" className={`group ${ACTION_PRIMARY}`}>
                   JOIN WAITLIST
-                  <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
+                  <span aria-hidden="true" className={ACTION_ARROW}>
                     →
                   </span>
                 </button>
@@ -83,7 +85,7 @@ export default function AiStartSection() {
             ) : (
               <p
                 role="status"
-                className="font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-white"
+                className="font-mono text-[13px] font-bold tracking-action text-ink"
               >
                 You&apos;re on the list — we&apos;ll email you when it&apos;s ready.
               </p>
@@ -96,7 +98,7 @@ export default function AiStartSection() {
           </RevealItem>
 
           <RevealItem>
-            <div className="relative overflow-hidden rounded-[20px] border border-white/[0.12]">
+            <div className="relative overflow-hidden rounded-[20px] border border-rule">
               <Image
                 src="/images/swimvolt/pose-overlay.jpg"
                 alt="Chris diving with SwimVolt pose tracking overlaid"
@@ -105,10 +107,10 @@ export default function AiStartSection() {
                 className="h-auto w-full"
                 priority
               />
-              <div className="pointer-events-none absolute right-4 top-4 rounded-full bg-white px-3.5 py-1.5 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-bold tracking-[0.04em] text-[#08090b]">
+              <div className="pointer-events-none absolute right-4 top-4 rounded-full bg-ink px-3.5 py-1.5 font-mono text-label font-bold tracking-action text-ground">
                 WAITLIST OPEN
               </div>
-              <p className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#08090b]/70 to-transparent px-6 pb-4 pt-10 text-center font-[family-name:var(--font-jetbrains-mono)] text-[11px] tracking-[0.08em] text-white/80">
+              <p className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ground/70 to-transparent px-6 pb-4 pt-10 text-center font-mono text-label font-medium tracking-eyebrow text-ink">
                 FRAME-BY-FRAME START ANALYSIS
               </p>
             </div>

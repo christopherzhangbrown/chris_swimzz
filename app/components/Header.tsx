@@ -59,11 +59,11 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-          isScrolled ? "border-b border-white/10 bg-[#08090b]/80 backdrop-blur-md" : "bg-transparent"
+          isScrolled ? "border-b border-rule bg-ground/80 backdrop-blur-md" : "bg-transparent"
         }`}
       >
         <div className="mx-auto flex h-[76px] max-w-[1280px] items-center justify-between px-6">
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="-ml-2 flex min-h-11 items-center gap-3 px-2">
             <Image
               src="/images/logos/logowhiteimg.png"
               alt="Chris Swimzz"
@@ -72,19 +72,19 @@ export default function Header() {
               priority
               className="h-8 w-auto [filter:brightness(0)_invert(1)]"
             />
-            <span className="font-[family-name:var(--font-big-shoulders)] text-[15px] font-extrabold tracking-[0.08em] text-white">
+            <span className="font-display text-[15px] font-extrabold tracking-wordmark text-ink">
               CHRIS SWIMZZ
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-9 md:flex">
+          <nav className="hidden items-center gap-5 md:flex">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 aria-current={item.id === activeId ? "true" : undefined}
-                className={`font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.08em] transition-colors duration-200 ${
-                  item.id === activeId ? "text-white" : "text-white/60 hover:text-white"
+                className={`inline-flex min-h-11 items-center px-2 font-mono text-[12px] font-bold tracking-action transition-colors duration-200 ${
+                  item.id === activeId ? "text-ink" : "text-ink-subtle hover:text-ink"
                 }`}
               >
                 {item.name}
@@ -93,7 +93,7 @@ export default function Header() {
           </nav>
 
           <button
-            className="p-2 text-white md:hidden"
+            className="-mr-2 flex h-11 w-11 items-center justify-center text-ink md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
@@ -107,13 +107,16 @@ export default function Header() {
       {isMenuOpen && (
         <div id="mobile-menu" className="fixed inset-0 z-40 md:hidden">
           <div className="fixed inset-0 bg-black/60" onClick={() => setIsMenuOpen(false)} />
-          <div className="fixed left-0 right-0 top-[76px] border-b border-white/10 bg-[#08090b]/95 backdrop-blur-sm">
-            <nav className="space-y-4 px-6 py-6">
+          <div className="fixed left-0 right-0 top-[76px] border-b border-rule bg-ground/95 backdrop-blur-sm">
+            <nav className="px-6 py-3">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.08em] text-white/70 transition-colors duration-200 hover:text-white"
+                  aria-current={item.id === activeId ? "true" : undefined}
+                  className={`flex min-h-11 items-center font-mono text-[12px] font-bold tracking-action transition-colors duration-200 ${
+                    item.id === activeId ? "text-ink" : "text-ink-subtle hover:text-ink"
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

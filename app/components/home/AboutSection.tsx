@@ -22,14 +22,14 @@ export default function AboutSection() {
           <RevealItem className="max-w-[640px]">
             <div className="relative mb-8">
               <GhostNumber number="01" />
-              <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/60">
+              <div className="relative z-10 mb-3.5 font-mono text-[12px] font-bold tracking-eyebrow text-ink-subtle">
                 WHO I AM
               </div>
-              <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+              <h2 className="relative z-10 m-0 font-display text-[clamp(32px,4vw,52px)] font-extrabold leading-none text-balance">
                 MY STORY
               </h2>
             </div>
-            <div className="space-y-5 text-[16px] leading-[1.7] text-white/65">
+            <div className="max-w-[560px] space-y-5 text-[16px] leading-[1.7] text-ink-muted">
               <p>
                 I&apos;m a Division 1 swimmer at Brown University and content creator sharing swimming insights with 20K+
                 followers.

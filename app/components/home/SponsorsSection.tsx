@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
+import { ACTION_ARROW } from "@/app/components/ui/actions"
 import GhostNumber from "./GhostNumber"
 
 const sponsors = [
@@ -76,10 +77,10 @@ export default function SponsorsSection() {
       <div className="mx-auto max-w-[1280px]">
         <Reveal className="relative mb-14">
           <GhostNumber number="03" />
-          <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/60">
+          <div className="relative z-10 mb-3.5 font-mono text-[12px] font-bold tracking-eyebrow text-ink-subtle">
             WHO BACKS THE JOURNEY
           </div>
-          <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+          <h2 className="relative z-10 m-0 font-display text-[clamp(32px,4vw,52px)] font-extrabold leading-none text-balance">
             SPONSORS
           </h2>
         </Reveal>
@@ -91,32 +92,39 @@ export default function SponsorsSection() {
                 href={sponsor.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-8 border-b border-white/[0.08] py-10 transition-colors duration-300 hover:bg-white/[0.02]"
+                className="group flex flex-wrap items-center gap-x-8 gap-y-5 border-b border-rule-faint py-10 transition-colors duration-300 hover:bg-white/[0.02]"
               >
-                <div aria-hidden="true" className="w-12 shrink-0 font-[family-name:var(--font-jetbrains-mono)] text-[16px] font-bold tracking-[0.04em] text-white/30">
+                <div aria-hidden="true" className="w-8 shrink-0 font-mono text-label font-bold tracking-action text-ink-faint sm:w-12 sm:text-[16px]">
                   {String(index + 1).padStart(2, "0")}
                 </div>
-                <div className="flex h-16 w-44 shrink-0 items-center">
+                {/* Both axes are bounded so lockups of different aspect ratios
+                    land at a comparable optical weight. Height alone let the
+                    wide Nike lockup render far heavier than the compact ones. */}
+                <div className="flex h-10 w-32 shrink-0 items-center sm:h-12 sm:w-40">
                   <Image
                     src={sponsor.logo}
                     alt={`${sponsor.name} logo`}
                     width={220}
                     height={90}
-                    className="h-full w-auto object-contain object-left [filter:brightness(0)_invert(1)] opacity-60 transition-opacity duration-300 group-hover:opacity-100"
+                    className="max-h-full max-w-full object-contain object-left [filter:brightness(0)_invert(1)] opacity-60 transition-opacity duration-300 group-hover:opacity-100"
                   />
                 </div>
-                <div className="flex-1">
-                  <div className="font-[family-name:var(--font-big-shoulders)] text-[32px] font-extrabold uppercase leading-none tracking-[0.01em]">
+                <div className="min-w-0 flex-1 basis-full sm:basis-0">
+                  <div className="font-display text-[26px] font-extrabold uppercase leading-none tracking-[0.01em] sm:text-[32px]">
                     {sponsor.name}
                   </div>
                   {sponsor.code && (
-                    <div className="mt-2 font-[family-name:var(--font-jetbrains-mono)] text-[11px] tracking-[0.04em] text-white/50">
-                      CODE {sponsor.code} — {sponsor.codeDescription}
+                    <div className="mt-2 font-mono text-label text-ink-subtle">
+                      <span className="font-bold tracking-eyebrow">CODE {sponsor.code}</span>{" "}
+                      <span className="font-body">— {sponsor.codeDescription}</span>
                     </div>
                   )}
                 </div>
-                <div className="shrink-0 font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.08em] text-white/60 transition-colors duration-300 group-hover:text-white">
-                  VISIT →
+                <div className="shrink-0 font-mono text-[13px] font-bold tracking-action text-ink-subtle transition-colors duration-300 group-hover:text-ink">
+                  VISIT{" "}
+                  <span aria-hidden="true" className={ACTION_ARROW}>
+                    →
+                  </span>
                 </div>
               </a>
             </RevealItem>

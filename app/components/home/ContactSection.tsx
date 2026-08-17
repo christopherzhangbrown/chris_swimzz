@@ -5,10 +5,9 @@ import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Reveal } from "@/app/components/motion/Reveal"
+import { ACTION_PRIMARY, ACTION_ARROW } from "@/app/components/ui/actions"
+import { FIELD_CLASSNAME, FIELD_LABEL_CLASSNAME, EMAIL_PLACEHOLDER } from "@/app/components/ui/field"
 import GhostNumber from "./GhostNumber"
-
-const FIELD_CLASSNAME =
-  "h-auto w-full rounded-none border-0 border-b border-white/15 bg-transparent px-0 py-3 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-white focus-visible:shadow-[inset_0_-2px_0_0_white]"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
@@ -50,21 +49,21 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start">
           <Reveal className="relative">
             <GhostNumber number="05" />
-            <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/60">
+            <div className="relative z-10 mb-3.5 font-mono text-[12px] font-bold tracking-eyebrow text-ink-subtle">
               LET&apos;S TALK
             </div>
-            <h2 className="relative z-10 m-0 flex items-center gap-4 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+            <h2 className="relative z-10 m-0 flex items-center gap-4 font-display text-[clamp(32px,4vw,52px)] font-extrabold leading-none text-balance">
               GET IN TOUCH
-              <span aria-hidden="true" className="text-white/50">
+              <span aria-hidden="true" className="text-ink-subtle">
                 →
               </span>
             </h2>
-            <div className="relative z-10 mt-8 h-px w-full bg-white/10" />
-            <p className="relative z-10 mt-8 max-w-[440px] text-[16px] leading-[1.7] text-white/65">
+            <div className="relative z-10 mt-8 h-px w-full bg-rule-faint" />
+            <p className="relative z-10 mt-8 max-w-[440px] text-[16px] leading-[1.7] text-ink-muted">
               Collabs, questions, partnerships — let&apos;s talk. For sponsorships &amp; business inquiries:{" "}
               <a
                 href="mailto:chrisswimzzinquires@gmail.com"
-                className="text-white/80 underline underline-offset-4 hover:text-white"
+                className="text-ink underline decoration-rule-strong underline-offset-4 transition-colors duration-200 hover:decoration-ink"
               >
                 chrisswimzzinquires@gmail.com
               </a>
@@ -74,14 +73,15 @@ export default function ContactSection() {
           <Reveal delay={0.1}>
             <form onSubmit={handleSubmit} className="space-y-8">
               <div>
-                <label htmlFor="contact-name" className="sr-only">
-                  Your name
+                <label htmlFor="contact-name" className={FIELD_LABEL_CLASSNAME}>
+                  NAME
                 </label>
                 <Input
                   id="contact-name"
                   name="name"
                   type="text"
-                  placeholder="Your name"
+                  autoComplete="name"
+                  placeholder="Chris Zhang"
                   required
                   value={formData.name}
                   onChange={handleChange}
@@ -89,14 +89,15 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label htmlFor="contact-email" className="sr-only">
-                  Your email
+                <label htmlFor="contact-email" className={FIELD_LABEL_CLASSNAME}>
+                  EMAIL
                 </label>
                 <Input
                   id="contact-email"
                   name="email"
                   type="email"
-                  placeholder="your.email@example.com"
+                  autoComplete="email"
+                  placeholder={EMAIL_PLACEHOLDER}
                   required
                   value={formData.email}
                   onChange={handleChange}
@@ -104,27 +105,27 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label htmlFor="contact-message" className="sr-only">
-                  Your message
+                <label htmlFor="contact-message" className={FIELD_LABEL_CLASSNAME}>
+                  MESSAGE
                 </label>
                 <Textarea
                   id="contact-message"
                   name="message"
-                  placeholder="Tell me about your inquiry, collaboration idea, or just say hello!"
+                  placeholder="Tell me about your inquiry, collaboration idea, or just say hello"
                   required
                   value={formData.message}
                   onChange={handleChange}
                   className={`min-h-[100px] resize-none ${FIELD_CLASSNAME}`}
                 />
               </div>
-              <button
-                type="submit"
-                className="h-[52px] w-full rounded-full bg-white font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-[#08090b] transition-colors duration-300 hover:bg-white/85 sm:w-auto sm:px-8"
-              >
-                SEND MESSAGE →
+              <button type="submit" className={`group w-full sm:w-auto ${ACTION_PRIMARY}`}>
+                SEND MESSAGE
+                <span aria-hidden="true" className={ACTION_ARROW}>
+                  →
+                </span>
               </button>
               {success && (
-                <p role="status" className="text-[13px] text-white">
+                <p role="status" className="text-[13px] text-ink">
                   Message sent! I&apos;ll get back to you soon.
                 </p>
               )}

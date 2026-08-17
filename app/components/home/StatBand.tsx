@@ -49,34 +49,34 @@ export default function StatBand() {
     <section ref={sectionRef} className="px-6 pb-[88px] pt-16">
       <RevealStagger className="mx-auto grid max-w-[1280px] grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8 text-center">
         <RevealItem>
-          <div className="font-[family-name:var(--font-big-shoulders)] text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
-            {followers}K<span className="text-white/40">+</span>
+          <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-ink">
+            {followers}K<span className="text-ink-faint">+</span>
           </div>
-          <div className="mt-3 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-medium tracking-[0.14em] text-white/60">
+          <div className="mt-3 font-mono text-label font-medium tracking-eyebrow text-ink-subtle">
             INSTAGRAM FOLLOWERS
           </div>
         </RevealItem>
         <RevealItem>
-          <div className="font-[family-name:var(--font-big-shoulders)] text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
-            {views}K<span className="text-white/40">+</span>
+          <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-ink">
+            {views}K<span className="text-ink-faint">+</span>
           </div>
-          <div className="mt-3 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-medium tracking-[0.14em] text-white/50">
+          <div className="mt-3 font-mono text-label font-medium tracking-eyebrow text-ink-subtle">
             TOTAL VIEWS ACROSS TOP CLIPS
           </div>
         </RevealItem>
         <RevealItem>
-          <div className="font-[family-name:var(--font-big-shoulders)] text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
-            {years}<span className="text-white/40">+</span>
+          <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-ink">
+            {years}<span className="text-ink-faint">+</span>
           </div>
-          <div className="mt-3 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-medium tracking-[0.14em] text-white/50">
+          <div className="mt-3 font-mono text-label font-medium tracking-eyebrow text-ink-subtle">
             YEARS COMPETITIVE SWIMMING
           </div>
         </RevealItem>
         <RevealItem>
-          <div className="font-[family-name:var(--font-big-shoulders)] text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
+          <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-ink">
             D1
           </div>
-          <div className="mt-3 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-medium tracking-[0.14em] text-white/50">
+          <div className="mt-3 font-mono text-label font-medium tracking-eyebrow text-ink-subtle">
             BROWN UNIVERSITY
           </div>
         </RevealItem>

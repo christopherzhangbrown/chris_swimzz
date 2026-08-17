@@ -58,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${bigShoulders.variable} ${archivo.variable} ${jetbrainsMono.variable} font-[family-name:var(--font-archivo)] antialiased`}
+        className={`${bigShoulders.variable} ${archivo.variable} ${jetbrainsMono.variable} font-body antialiased`}
         suppressHydrationWarning={true}
       >
         <Header />
