@@ -6,10 +6,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Reveal } from "@/app/components/motion/Reveal"
 import { ACTION_PRIMARY, ACTION_ARROW } from "@/app/components/ui/actions"
+import { FIELD_CLASSNAME, FIELD_LABEL_CLASSNAME, EMAIL_PLACEHOLDER } from "@/app/components/ui/field"
 import GhostNumber from "./GhostNumber"
-
-const FIELD_CLASSNAME =
-  "h-auto w-full rounded-none border-0 border-b border-rule bg-transparent px-0 py-3 text-white placeholder:text-ink-faint focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-white focus-visible:shadow-[inset_0_-2px_0_0_white]"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
@@ -75,14 +73,15 @@ export default function ContactSection() {
           <Reveal delay={0.1}>
             <form onSubmit={handleSubmit} className="space-y-8">
               <div>
-                <label htmlFor="contact-name" className="sr-only">
-                  Your name
+                <label htmlFor="contact-name" className={FIELD_LABEL_CLASSNAME}>
+                  NAME
                 </label>
                 <Input
                   id="contact-name"
                   name="name"
                   type="text"
-                  placeholder="Your name"
+                  autoComplete="name"
+                  placeholder="Chris Zhang"
                   required
                   value={formData.name}
                   onChange={handleChange}
@@ -90,14 +89,15 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label htmlFor="contact-email" className="sr-only">
-                  Your email
+                <label htmlFor="contact-email" className={FIELD_LABEL_CLASSNAME}>
+                  EMAIL
                 </label>
                 <Input
                   id="contact-email"
                   name="email"
                   type="email"
-                  placeholder="your.email@example.com"
+                  autoComplete="email"
+                  placeholder={EMAIL_PLACEHOLDER}
                   required
                   value={formData.email}
                   onChange={handleChange}
@@ -105,13 +105,13 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label htmlFor="contact-message" className="sr-only">
-                  Your message
+                <label htmlFor="contact-message" className={FIELD_LABEL_CLASSNAME}>
+                  MESSAGE
                 </label>
                 <Textarea
                   id="contact-message"
                   name="message"
-                  placeholder="Tell me about your inquiry, collaboration idea, or just say hello!"
+                  placeholder="Tell me about your inquiry, collaboration idea, or just say hello"
                   required
                   value={formData.message}
                   onChange={handleChange}

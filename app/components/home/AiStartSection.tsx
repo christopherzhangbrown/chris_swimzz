@@ -6,6 +6,7 @@ import Image from "next/image"
 import { Input } from "@/components/ui/input"
 import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
 import { ACTION_PRIMARY, ACTION_ARROW } from "@/app/components/ui/actions"
+import { FIELD_CLASSNAME, FIELD_LABEL_CLASSNAME, EMAIL_PLACEHOLDER } from "@/app/components/ui/field"
 import GhostNumber from "./GhostNumber"
 
 export default function AiStartSection() {
@@ -59,18 +60,21 @@ export default function AiStartSection() {
 
             {!isSubmitted ? (
               <form onSubmit={handleSubmit} className="space-y-8">
-                <label htmlFor="waitlist-email" className="sr-only">
-                  Your email
-                </label>
-                <Input
-                  id="waitlist-email"
-                  type="email"
-                  placeholder="you@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="h-auto w-full rounded-none border-0 border-b border-rule bg-transparent px-0 py-3 text-white placeholder:text-ink-faint focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-white focus-visible:shadow-[inset_0_-2px_0_0_white]"
-                />
+                <div>
+                  <label htmlFor="waitlist-email" className={FIELD_LABEL_CLASSNAME}>
+                    EMAIL
+                  </label>
+                  <Input
+                    id="waitlist-email"
+                    type="email"
+                    autoComplete="email"
+                    placeholder={EMAIL_PLACEHOLDER}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className={FIELD_CLASSNAME}
+                  />
+                </div>
                 <button type="submit" className={`group ${ACTION_PRIMARY}`}>
                   JOIN WAITLIST
                   <span aria-hidden="true" className={ACTION_ARROW}>
