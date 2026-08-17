@@ -30,10 +30,10 @@ export default function PopularContent() {
         <Reveal className="mb-14 flex flex-wrap items-end justify-between gap-6">
           <div className="relative">
             <GhostNumber number="02" />
-            <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/60">
+            <div className="relative z-10 mb-3.5 font-mono text-[12px] font-bold tracking-eyebrow text-ink-subtle">
               MOST WATCHED
             </div>
-            <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+            <h2 className="relative z-10 m-0 font-display text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
               POPULAR CONTENT
             </h2>
           </div>
@@ -41,7 +41,7 @@ export default function PopularContent() {
             href="https://www.instagram.com/chris_swimzz/"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-b border-white/35 pb-1 font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-white/80 transition-colors duration-300 hover:border-white hover:text-white"
+            className="border-b border-rule-strong pb-1 font-mono text-[13px] font-bold tracking-action text-white/80 transition-colors duration-300 hover:border-white hover:text-white"
           >
             VIEW ALL ON INSTAGRAM →
           </a>

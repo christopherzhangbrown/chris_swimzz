@@ -17,7 +17,7 @@ export default function GhostNumber({ number }: { number: string }) {
       ref={ref}
       style={{ y }}
       aria-hidden="true"
-      className="pointer-events-none absolute -top-8 left-0 -z-10 select-none font-[family-name:var(--font-big-shoulders)] text-[clamp(120px,20vw,280px)] font-extrabold leading-none text-white/[0.04]"
+      className="pointer-events-none absolute -top-8 left-0 -z-10 select-none font-display text-[clamp(120px,20vw,280px)] font-extrabold leading-none text-white/[0.04]"
     >
       {number}
     </motion.div>

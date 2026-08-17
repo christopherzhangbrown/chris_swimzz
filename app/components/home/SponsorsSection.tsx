@@ -76,10 +76,10 @@ export default function SponsorsSection() {
       <div className="mx-auto max-w-[1280px]">
         <Reveal className="relative mb-14">
           <GhostNumber number="03" />
-          <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/60">
+          <div className="relative z-10 mb-3.5 font-mono text-[12px] font-bold tracking-eyebrow text-ink-subtle">
             WHO BACKS THE JOURNEY
           </div>
-          <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+          <h2 className="relative z-10 m-0 font-display text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
             SPONSORS
           </h2>
         </Reveal>
@@ -91,9 +91,9 @@ export default function SponsorsSection() {
                 href={sponsor.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-8 border-b border-white/[0.08] py-10 transition-colors duration-300 hover:bg-white/[0.02]"
+                className="group flex items-center gap-8 border-b border-rule-faint py-10 transition-colors duration-300 hover:bg-white/[0.02]"
               >
-                <div aria-hidden="true" className="w-12 shrink-0 font-[family-name:var(--font-jetbrains-mono)] text-[16px] font-bold tracking-[0.04em] text-white/30">
+                <div aria-hidden="true" className="w-12 shrink-0 font-mono text-[16px] font-bold tracking-[0.04em] text-white/30">
                   {String(index + 1).padStart(2, "0")}
                 </div>
                 <div className="flex h-16 w-44 shrink-0 items-center">
@@ -106,16 +106,16 @@ export default function SponsorsSection() {
                   />
                 </div>
                 <div className="flex-1">
-                  <div className="font-[family-name:var(--font-big-shoulders)] text-[32px] font-extrabold uppercase leading-none tracking-[0.01em]">
+                  <div className="font-display text-[32px] font-extrabold uppercase leading-none tracking-[0.01em]">
                     {sponsor.name}
                   </div>
                   {sponsor.code && (
-                    <div className="mt-2 font-[family-name:var(--font-jetbrains-mono)] text-[11px] tracking-[0.04em] text-white/50">
+                    <div className="mt-2 font-mono text-[11px] tracking-[0.04em] text-ink-subtle">
                       CODE {sponsor.code} — {sponsor.codeDescription}
                     </div>
                   )}
                 </div>
-                <div className="shrink-0 font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.08em] text-white/60 transition-colors duration-300 group-hover:text-white">
+                <div className="shrink-0 font-mono text-[13px] font-bold tracking-[0.08em] text-ink-subtle transition-colors duration-300 group-hover:text-white">
                   VISIT →
                 </div>
               </a>

@@ -28,11 +28,14 @@ const config: Config = {
         body: ["var(--font-archivo)", "sans-serif"],
         mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
-      // Two tracking roles, not six. Eyebrows and labels sit wide; actions
-      // sit tight enough to still read as a button.
+      // Three tracking roles, not six.
+      //   eyebrow  labels that describe something else
+      //   action   buttons, CTA links, nav, badges
+      //   wordmark the brand lockup, header and footer
       letterSpacing: {
         eyebrow: "0.14em",
         action: "0.06em",
+        wordmark: "0.08em",
       },
       fontSize: {
         label: ["12px", { lineHeight: "1.4" }],

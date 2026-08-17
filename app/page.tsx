@@ -8,7 +8,7 @@ import ContactSection from "./components/home/ContactSection"
 
 export default function HomePage() {
   return (
-    <div className="relative overflow-x-hidden bg-[#08090b] text-[#f5f6f7]">
+    <div className="relative overflow-x-hidden bg-ground text-ink">
       <div className="relative z-[1]">
         <HeroSection />
         <StatBand />

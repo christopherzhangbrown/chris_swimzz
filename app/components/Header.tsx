@@ -59,7 +59,7 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-          isScrolled ? "border-b border-white/10 bg-[#08090b]/80 backdrop-blur-md" : "bg-transparent"
+          isScrolled ? "border-b border-rule bg-ground/80 backdrop-blur-md" : "bg-transparent"
         }`}
       >
         <div className="mx-auto flex h-[76px] max-w-[1280px] items-center justify-between px-6">
@@ -72,7 +72,7 @@ export default function Header() {
               priority
               className="h-8 w-auto [filter:brightness(0)_invert(1)]"
             />
-            <span className="font-[family-name:var(--font-big-shoulders)] text-[15px] font-extrabold tracking-[0.08em] text-white">
+            <span className="font-display text-[15px] font-extrabold tracking-wordmark text-white">
               CHRIS SWIMZZ
             </span>
           </Link>
@@ -83,8 +83,8 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 aria-current={item.id === activeId ? "true" : undefined}
-                className={`font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.08em] transition-colors duration-200 ${
-                  item.id === activeId ? "text-white" : "text-white/60 hover:text-white"
+                className={`font-mono text-[12px] font-bold tracking-action transition-colors duration-200 ${
+                  item.id === activeId ? "text-white" : "text-ink-subtle hover:text-white"
                 }`}
               >
                 {item.name}
@@ -107,13 +107,13 @@ export default function Header() {
       {isMenuOpen && (
         <div id="mobile-menu" className="fixed inset-0 z-40 md:hidden">
           <div className="fixed inset-0 bg-black/60" onClick={() => setIsMenuOpen(false)} />
-          <div className="fixed left-0 right-0 top-[76px] border-b border-white/10 bg-[#08090b]/95 backdrop-blur-sm">
+          <div className="fixed left-0 right-0 top-[76px] border-b border-rule bg-ground/95 backdrop-blur-sm">
             <nav className="space-y-4 px-6 py-6">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.08em] text-white/70 transition-colors duration-200 hover:text-white"
+                  className="block font-mono text-[12px] font-bold tracking-action text-ink-subtle transition-colors duration-200 hover:text-white"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

@@ -8,7 +8,7 @@ import { Reveal } from "@/app/components/motion/Reveal"
 import GhostNumber from "./GhostNumber"
 
 const FIELD_CLASSNAME =
-  "h-auto w-full rounded-none border-0 border-b border-white/15 bg-transparent px-0 py-3 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-white focus-visible:shadow-[inset_0_-2px_0_0_white]"
+  "h-auto w-full rounded-none border-0 border-b border-rule bg-transparent px-0 py-3 text-white placeholder:text-ink-faint focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-white focus-visible:shadow-[inset_0_-2px_0_0_white]"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
@@ -50,17 +50,17 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start">
           <Reveal className="relative">
             <GhostNumber number="05" />
-            <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/60">
+            <div className="relative z-10 mb-3.5 font-mono text-[12px] font-bold tracking-eyebrow text-ink-subtle">
               LET&apos;S TALK
             </div>
-            <h2 className="relative z-10 m-0 flex items-center gap-4 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+            <h2 className="relative z-10 m-0 flex items-center gap-4 font-display text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
               GET IN TOUCH
-              <span aria-hidden="true" className="text-white/50">
+              <span aria-hidden="true" className="text-ink-subtle">
                 →
               </span>
             </h2>
             <div className="relative z-10 mt-8 h-px w-full bg-white/10" />
-            <p className="relative z-10 mt-8 max-w-[440px] text-[16px] leading-[1.7] text-white/65">
+            <p className="relative z-10 mt-8 max-w-[440px] text-[16px] leading-[1.7] text-ink-muted">
               Collabs, questions, partnerships — let&apos;s talk. For sponsorships &amp; business inquiries:{" "}
               <a
                 href="mailto:chrisswimzzinquires@gmail.com"
@@ -119,7 +119,7 @@ export default function ContactSection() {
               </div>
               <button
                 type="submit"
-                className="h-[52px] w-full rounded-full bg-white font-[family-name:var(--font-jetbrains-mono)] text-[13px] font-bold tracking-[0.06em] text-[#08090b] transition-colors duration-300 hover:bg-white/85 sm:w-auto sm:px-8"
+                className="h-[52px] w-full rounded-full bg-white font-mono text-[13px] font-bold tracking-action text-ground transition-colors duration-300 hover:bg-white/85 sm:w-auto sm:px-8"
               >
                 SEND MESSAGE →
               </button>

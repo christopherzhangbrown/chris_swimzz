@@ -15,7 +15,7 @@ export default function Footer() {
     <footer className="overflow-hidden px-6 pb-14 pt-12">
       <Reveal className="mx-auto max-w-[1280px]">
         <div className="flex flex-wrap items-center justify-between gap-6">
-          <div className="text-[13px] text-white/60">© 2026 Christopher Zhang. All rights reserved.</div>
+          <div className="text-[13px] text-ink-subtle">© 2026 Christopher Zhang. All rights reserved.</div>
 
           <div className="flex items-center gap-3">
             <Image
@@ -25,7 +25,7 @@ export default function Footer() {
               height={72}
               className="h-[36px] w-auto [filter:brightness(0)_invert(1)]"
             />
-            <span className="font-[family-name:var(--font-big-shoulders)] text-[15px] font-extrabold tracking-[0.06em]">
+            <span className="font-display text-[15px] font-extrabold tracking-wordmark">
               CHRIS SWIMZZ
             </span>
           </div>
@@ -38,7 +38,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="flex h-[34px] w-[34px] items-center justify-center rounded-full border border-white/20 text-white/60 transition-colors duration-300 hover:border-white hover:text-white"
+                className="flex h-[34px] w-[34px] items-center justify-center rounded-full border border-rule text-ink-subtle transition-colors duration-300 hover:border-white hover:text-white"
               >
                 <Icon className="h-4 w-4" />
               </Link>

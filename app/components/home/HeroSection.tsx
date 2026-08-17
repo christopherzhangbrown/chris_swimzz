@@ -71,13 +71,13 @@ export default function HeroSection() {
         onClick={toggleVideo}
         aria-pressed={!isPlaying}
         aria-label={isPlaying ? "Pause background video" : "Play background video"}
-        className="absolute bottom-6 right-6 z-[2] flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-black/40 text-white backdrop-blur-sm transition-colors duration-200 hover:border-white hover:bg-black/60 focus-visible:outline-none focus-visible:border-white focus-visible:ring-2 focus-visible:ring-white/70"
+        className="absolute bottom-6 right-6 z-[2] flex h-10 w-10 items-center justify-center rounded-full border border-rule-strong bg-black/40 text-white backdrop-blur-sm transition-colors duration-200 hover:border-white hover:bg-black/60 focus-visible:outline-none focus-visible:border-white focus-visible:ring-2 focus-visible:ring-white/70"
       >
         {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
       </button>
 
       <div className="relative z-[2] w-full px-12 pb-[88px]">
-        <h1 className="m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(64px,13vw,180px)] font-extrabold leading-[0.86] tracking-[-0.01em] [text-shadow:0_4px_24px_rgba(0,0,0,0.5)]">
+        <h1 className="m-0 font-display text-[clamp(64px,13vw,180px)] font-extrabold leading-[0.86] tracking-[-0.01em] [text-shadow:0_4px_24px_rgba(0,0,0,0.5)]">
           CHRIS SWIMZZ
         </h1>
       </div>
