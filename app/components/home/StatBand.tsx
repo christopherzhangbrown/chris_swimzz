@@ -52,7 +52,7 @@ export default function StatBand() {
           <div className="font-[family-name:var(--font-big-shoulders)] text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
             {followers}K<span className="text-white/40">+</span>
           </div>
-          <div className="mt-3 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-medium tracking-[0.14em] text-white/60">
+          <div className="mt-3 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-medium tracking-[0.14em] text-white/50">
             INSTAGRAM FOLLOWERS
           </div>
         </RevealItem>
