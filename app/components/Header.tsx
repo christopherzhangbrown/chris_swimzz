@@ -72,7 +72,7 @@ export default function Header() {
               priority
               className="h-8 w-auto [filter:brightness(0)_invert(1)]"
             />
-            <span className="font-display text-[15px] font-extrabold tracking-wordmark text-white">
+            <span className="font-display text-[15px] font-extrabold tracking-wordmark text-ink">
               CHRIS SWIMZZ
             </span>
           </Link>

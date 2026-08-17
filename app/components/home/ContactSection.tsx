@@ -58,12 +58,12 @@ export default function ContactSection() {
                 →
               </span>
             </h2>
-            <div className="relative z-10 mt-8 h-px w-full bg-white/10" />
+            <div className="relative z-10 mt-8 h-px w-full bg-rule-faint" />
             <p className="relative z-10 mt-8 max-w-[440px] text-[16px] leading-[1.7] text-ink-muted">
               Collabs, questions, partnerships — let&apos;s talk. For sponsorships &amp; business inquiries:{" "}
               <a
                 href="mailto:chrisswimzzinquires@gmail.com"
-                className="text-white/80 underline underline-offset-4 hover:text-white"
+                className="text-ink underline decoration-rule-strong underline-offset-4 transition-colors duration-200 hover:decoration-ink"
               >
                 chrisswimzzinquires@gmail.com
               </a>
@@ -125,7 +125,7 @@ export default function ContactSection() {
                 </span>
               </button>
               {success && (
-                <p role="status" className="text-[13px] text-white">
+                <p role="status" className="text-[13px] text-ink">
                   Message sent! I&apos;ll get back to you soon.
                 </p>
               )}

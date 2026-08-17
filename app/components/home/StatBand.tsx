@@ -49,7 +49,7 @@ export default function StatBand() {
     <section ref={sectionRef} className="px-6 pb-[88px] pt-16">
       <RevealStagger className="mx-auto grid max-w-[1280px] grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8 text-center">
         <RevealItem>
-          <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
+          <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-ink">
             {followers}K<span className="text-ink-faint">+</span>
           </div>
           <div className="mt-3 font-mono text-label font-medium tracking-eyebrow text-ink-subtle">
@@ -57,7 +57,7 @@ export default function StatBand() {
           </div>
         </RevealItem>
         <RevealItem>
-          <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
+          <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-ink">
             {views}K<span className="text-ink-faint">+</span>
           </div>
           <div className="mt-3 font-mono text-label font-medium tracking-eyebrow text-ink-subtle">
@@ -65,7 +65,7 @@ export default function StatBand() {
           </div>
         </RevealItem>
         <RevealItem>
-          <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
+          <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-ink">
             {years}<span className="text-ink-faint">+</span>
           </div>
           <div className="mt-3 font-mono text-label font-medium tracking-eyebrow text-ink-subtle">
@@ -73,7 +73,7 @@ export default function StatBand() {
           </div>
         </RevealItem>
         <RevealItem>
-          <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
+          <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-ink">
             D1
           </div>
           <div className="mt-3 font-mono text-label font-medium tracking-eyebrow text-ink-subtle">
