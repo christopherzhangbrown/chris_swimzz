@@ -42,7 +42,7 @@ export default function PopularContentCard({ video }: { video: Video }) {
         <div className="ml-0.5 h-0 w-0 border-y-[7px] border-l-[11px] border-y-transparent border-l-white" />
       </div>
       <div className="absolute bottom-5 left-5 right-5">
-        <div className="mb-2 font-mono text-[11px] font-bold tracking-eyebrow text-ink-subtle">{video.views}</div>
+        <div className="mb-2 font-mono text-label font-bold tracking-eyebrow text-ink-subtle">{video.views}</div>
         <div className="font-display text-[22px] font-extrabold">
           {video.title}
         </div>

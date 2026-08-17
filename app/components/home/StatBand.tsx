@@ -52,7 +52,7 @@ export default function StatBand() {
           <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
             {followers}K<span className="text-ink-faint">+</span>
           </div>
-          <div className="mt-3 font-mono text-[11px] font-medium tracking-eyebrow text-ink-subtle">
+          <div className="mt-3 font-mono text-label font-medium tracking-eyebrow text-ink-subtle">
             INSTAGRAM FOLLOWERS
           </div>
         </RevealItem>
@@ -60,7 +60,7 @@ export default function StatBand() {
           <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
             {views}K<span className="text-ink-faint">+</span>
           </div>
-          <div className="mt-3 font-mono text-[11px] font-medium tracking-eyebrow text-ink-subtle">
+          <div className="mt-3 font-mono text-label font-medium tracking-eyebrow text-ink-subtle">
             TOTAL VIEWS ACROSS TOP CLIPS
           </div>
         </RevealItem>
@@ -68,7 +68,7 @@ export default function StatBand() {
           <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
             {years}<span className="text-ink-faint">+</span>
           </div>
-          <div className="mt-3 font-mono text-[11px] font-medium tracking-eyebrow text-ink-subtle">
+          <div className="mt-3 font-mono text-label font-medium tracking-eyebrow text-ink-subtle">
             YEARS COMPETITIVE SWIMMING
           </div>
         </RevealItem>
@@ -76,7 +76,7 @@ export default function StatBand() {
           <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-white">
             D1
           </div>
-          <div className="mt-3 font-mono text-[11px] font-medium tracking-eyebrow text-ink-subtle">
+          <div className="mt-3 font-mono text-label font-medium tracking-eyebrow text-ink-subtle">
             BROWN UNIVERSITY
           </div>
         </RevealItem>

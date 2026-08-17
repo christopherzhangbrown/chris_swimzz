@@ -107,10 +107,10 @@ export default function AiStartSection() {
                 className="h-auto w-full"
                 priority
               />
-              <div className="pointer-events-none absolute right-4 top-4 rounded-full bg-white px-3.5 py-1.5 font-mono text-[11px] font-bold tracking-action text-ground">
+              <div className="pointer-events-none absolute right-4 top-4 rounded-full bg-white px-3.5 py-1.5 font-mono text-label font-bold tracking-action text-ground">
                 WAITLIST OPEN
               </div>
-              <p className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ground/70 to-transparent px-6 pb-4 pt-10 text-center font-mono text-[11px] tracking-eyebrow text-white/80">
+              <p className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ground/70 to-transparent px-6 pb-4 pt-10 text-center font-mono text-label font-medium tracking-eyebrow text-white/80">
                 FRAME-BY-FRAME START ANALYSIS
               </p>
             </div>
