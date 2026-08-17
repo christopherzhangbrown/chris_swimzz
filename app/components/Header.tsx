@@ -29,7 +29,7 @@ export default function Header() {
     { name: "HOME", id: "home", href: "/" },
     { name: "ABOUT", id: "about", href: "/#about" },
     { name: "SPONSORS", id: "sponsors", href: "/#sponsors" },
-    { name: "AI START", id: "ai-start", href: "/#ai-start" },
+    { name: "SWIMVOLT", id: "ai-start", href: "/#ai-start" },
     { name: "CONTACT", id: "contact", href: "/#contact" },
   ]
 

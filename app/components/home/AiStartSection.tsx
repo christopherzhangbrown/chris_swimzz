@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState } from "react"
-import { motion, useReducedMotion } from "framer-motion"
+import Image from "next/image"
 import { Input } from "@/components/ui/input"
 import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
 import GhostNumber from "./GhostNumber"
@@ -11,7 +11,6 @@ export default function AiStartSection() {
   const [email, setEmail] = useState("")
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState("")
-  const reduceMotion = useReducedMotion()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -40,20 +39,21 @@ export default function AiStartSection() {
   return (
     <section id="ai-start" className="scroll-mt-[76px] px-6 pb-[120px]">
       <div className="mx-auto max-w-[1280px]">
-        <Reveal className="relative mb-14">
+        <Reveal className="relative mb-10">
           <GhostNumber number="04" />
           <div className="relative z-10 mb-3.5 font-[family-name:var(--font-jetbrains-mono)] text-[12px] font-bold tracking-[0.14em] text-white/60">
             COMING SOON
           </div>
           <h2 className="relative z-10 m-0 font-[family-name:var(--font-big-shoulders)] text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
-            AI START ANALYZER
+            SWIMVOLT
           </h2>
         </Reveal>
 
-        <RevealStagger className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_auto_minmax(0,380px)] lg:items-start">
-          <RevealItem className="max-w-[560px]">
+        <RevealStagger className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,340px)_minmax(0,1fr)] lg:gap-14">
+          <RevealItem>
             <p className="mb-8 text-[16px] leading-[1.7] text-white/65">
-              AI-powered feedback on your dive start, in seconds. Waitlist open now — be first to try it.
+              Film one racing start on your phone. SwimVolt reads it frame by frame and tells you
+              what to change.
             </p>
 
             {!isSubmitted ? (
@@ -95,37 +95,22 @@ export default function AiStartSection() {
             )}
           </RevealItem>
 
-          <div aria-hidden="true" className="hidden self-stretch border-l border-dashed border-white/15 lg:block" />
-
-          <RevealItem className="relative aspect-[4/5] w-full overflow-hidden rounded-[20px] border border-white/[0.12] bg-white/[0.02]">
-            <div className="absolute right-4 top-4 rounded-full bg-white px-3.5 py-1.5 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-bold tracking-[0.04em] text-[#08090b]">
-              WAITLIST OPEN
-            </div>
-
-            <div className="absolute inset-x-10 top-1/2 -translate-y-1/2">
-              <div className="relative h-px w-full bg-white/15">
-                <div className="absolute inset-0 flex items-center justify-between">
-                  <div className="h-3 w-px bg-white/25" />
-                  <div className="h-3 w-px bg-white/25" />
-                  <div className="h-3 w-px bg-white/25" />
-                </div>
-                <motion.div
-                  aria-hidden="true"
-                  className="absolute top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
-                  initial={{ left: "0%" }}
-                  animate={reduceMotion ? { left: "50%" } : { left: ["0%", "100%", "0%"] }}
-                  transition={reduceMotion ? undefined : { duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                />
+          <RevealItem>
+            <div className="relative overflow-hidden rounded-[20px] border border-white/[0.12]">
+              <Image
+                src="/images/swimvolt/pose-overlay.jpg"
+                alt="Chris diving with SwimVolt pose tracking overlaid"
+                width={946}
+                height={450}
+                className="h-auto w-full"
+                priority
+              />
+              <div className="pointer-events-none absolute right-4 top-4 rounded-full bg-white px-3.5 py-1.5 font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-bold tracking-[0.04em] text-[#08090b]">
+                WAITLIST OPEN
               </div>
-              <div className="mt-5 flex justify-between font-[family-name:var(--font-jetbrains-mono)] text-[11px] font-bold tracking-[0.1em] text-white/35">
-                <span>REACTION</span>
-                <span>ANGLE</span>
-                <span>ENTRY</span>
-              </div>
-            </div>
-
-            <div className="absolute inset-x-10 bottom-6 text-center font-[family-name:var(--font-jetbrains-mono)] text-[11px] tracking-[0.08em] text-white/30">
-              FRAME-BY-FRAME START ANALYSIS
+              <p className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#08090b]/70 to-transparent px-6 pb-4 pt-10 text-center font-[family-name:var(--font-jetbrains-mono)] text-[11px] tracking-[0.08em] text-white/80">
+                FRAME-BY-FRAME START ANALYSIS
+              </p>
             </div>
           </RevealItem>
         </RevealStagger>
