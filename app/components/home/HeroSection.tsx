@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { Pause, Play } from "lucide-react"
+import { ACTION_PRIMARY, ACTION_ARROW } from "@/app/components/ui/actions"
 
 export default function HeroSection() {
   const [pos, setPos] = useState({ x: 0, y: 0 })
@@ -76,10 +77,20 @@ export default function HeroSection() {
         {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
       </button>
 
-      <div className="relative z-[2] w-full px-12 pb-[88px]">
+      <div className="relative z-[2] w-full px-6 pb-[88px] sm:px-12">
         <h1 className="m-0 font-display text-[clamp(64px,13vw,180px)] font-extrabold leading-[0.86] text-balance tracking-[-0.01em] [text-shadow:0_4px_24px_rgba(0,0,0,0.5)]">
           CHRIS SWIMZZ
         </h1>
+        <p className="mt-5 max-w-[440px] text-[16px] leading-[1.7] text-ink [text-shadow:0_2px_12px_rgba(0,0,0,0.6)]">
+          Division 1 swimmer at Brown. I share the real training, the races, and
+          what the sport actually takes.
+        </p>
+        <a href="#about" className={`group mt-7 ${ACTION_PRIMARY}`}>
+          SEE THE STORY
+          <span aria-hidden="true" className={ACTION_ARROW}>
+            →
+          </span>
+        </a>
       </div>
     </section>
   )
