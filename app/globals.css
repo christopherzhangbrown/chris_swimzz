@@ -15,4 +15,13 @@
   ::selection {
     @apply bg-ink text-ground;
   }
+
+  /* The site is monochrome. The browser default focus ring is a saturated
+     blue that appears nowhere else and reads poorly against the near-black
+     ground, so every focusable element gets the brand ring. Components that
+     want a different ring (the form fields use an inset underline) override
+     this locally. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-white/70 ring-offset-2 ring-offset-ground;
+  }
 }
