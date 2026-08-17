@@ -91,31 +91,35 @@ export default function SponsorsSection() {
                 href={sponsor.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-8 border-b border-rule-faint py-10 transition-colors duration-300 hover:bg-white/[0.02]"
+                className="group flex flex-wrap items-center gap-x-8 gap-y-5 border-b border-rule-faint py-10 transition-colors duration-300 hover:bg-white/[0.02]"
               >
-                <div aria-hidden="true" className="w-12 shrink-0 font-mono text-[16px] font-bold tracking-[0.04em] text-white/30">
+                <div aria-hidden="true" className="w-8 shrink-0 font-mono text-label font-bold tracking-action text-ink-faint sm:w-12 sm:text-[16px]">
                   {String(index + 1).padStart(2, "0")}
                 </div>
-                <div className="flex h-16 w-44 shrink-0 items-center">
+                {/* Both axes are bounded so lockups of different aspect ratios
+                    land at a comparable optical weight. Height alone let the
+                    wide Nike lockup render far heavier than the compact ones. */}
+                <div className="flex h-10 w-32 shrink-0 items-center sm:h-12 sm:w-40">
                   <Image
                     src={sponsor.logo}
                     alt={`${sponsor.name} logo`}
                     width={220}
                     height={90}
-                    className="h-full w-auto object-contain object-left [filter:brightness(0)_invert(1)] opacity-60 transition-opacity duration-300 group-hover:opacity-100"
+                    className="max-h-full max-w-full object-contain object-left [filter:brightness(0)_invert(1)] opacity-60 transition-opacity duration-300 group-hover:opacity-100"
                   />
                 </div>
-                <div className="flex-1">
-                  <div className="font-display text-[32px] font-extrabold uppercase leading-none tracking-[0.01em]">
+                <div className="min-w-0 flex-1 basis-full sm:basis-0">
+                  <div className="font-display text-[26px] font-extrabold uppercase leading-none tracking-[0.01em] sm:text-[32px]">
                     {sponsor.name}
                   </div>
                   {sponsor.code && (
-                    <div className="mt-2 font-mono text-[11px] tracking-[0.04em] text-ink-subtle">
-                      CODE {sponsor.code} — {sponsor.codeDescription}
+                    <div className="mt-2 font-mono text-label text-ink-subtle">
+                      <span className="font-bold tracking-eyebrow">CODE {sponsor.code}</span>{" "}
+                      <span className="font-body">— {sponsor.codeDescription}</span>
                     </div>
                   )}
                 </div>
-                <div className="shrink-0 font-mono text-[13px] font-bold tracking-[0.08em] text-ink-subtle transition-colors duration-300 group-hover:text-white">
+                <div className="shrink-0 font-mono text-[13px] font-bold tracking-action text-ink-subtle transition-colors duration-300 group-hover:text-white">
                   VISIT →
                 </div>
               </a>
