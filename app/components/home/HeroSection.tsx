@@ -71,7 +71,7 @@ export default function HeroSection() {
         onClick={toggleVideo}
         aria-pressed={!isPlaying}
         aria-label={isPlaying ? "Pause background video" : "Play background video"}
-        className="absolute bottom-6 right-6 z-[2] flex h-10 w-10 items-center justify-center rounded-full border border-rule-strong bg-black/40 text-white backdrop-blur-sm transition-colors duration-200 hover:border-white hover:bg-black/60 focus-visible:outline-none focus-visible:border-white focus-visible:ring-2 focus-visible:ring-white/70"
+        className="absolute bottom-6 right-6 z-[2] flex h-11 w-11 items-center justify-center rounded-full border border-rule-strong bg-black/40 text-ink backdrop-blur-sm transition-colors duration-200 hover:border-ink hover:bg-black/60 focus-visible:border-ink"
       >
         {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
       </button>

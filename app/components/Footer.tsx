@@ -38,7 +38,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="flex h-[34px] w-[34px] items-center justify-center rounded-full border border-rule text-ink-subtle transition-colors duration-300 hover:border-white hover:text-white"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-rule text-ink-subtle transition-colors duration-300 hover:border-ink hover:text-ink"
               >
                 <Icon className="h-4 w-4" />
               </Link>

@@ -63,7 +63,7 @@ export default function Header() {
         }`}
       >
         <div className="mx-auto flex h-[76px] max-w-[1280px] items-center justify-between px-6">
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="-ml-2 flex min-h-11 items-center gap-3 px-2">
             <Image
               src="/images/logos/logowhiteimg.png"
               alt="Chris Swimzz"
@@ -77,14 +77,14 @@ export default function Header() {
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-9 md:flex">
+          <nav className="hidden items-center gap-5 md:flex">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 aria-current={item.id === activeId ? "true" : undefined}
-                className={`font-mono text-[12px] font-bold tracking-action transition-colors duration-200 ${
-                  item.id === activeId ? "text-white" : "text-ink-subtle hover:text-white"
+                className={`inline-flex min-h-11 items-center px-2 font-mono text-[12px] font-bold tracking-action transition-colors duration-200 ${
+                  item.id === activeId ? "text-ink" : "text-ink-subtle hover:text-ink"
                 }`}
               >
                 {item.name}
@@ -93,7 +93,7 @@ export default function Header() {
           </nav>
 
           <button
-            className="p-2 text-white md:hidden"
+            className="-mr-2 flex h-11 w-11 items-center justify-center text-ink md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
@@ -108,12 +108,15 @@ export default function Header() {
         <div id="mobile-menu" className="fixed inset-0 z-40 md:hidden">
           <div className="fixed inset-0 bg-black/60" onClick={() => setIsMenuOpen(false)} />
           <div className="fixed left-0 right-0 top-[76px] border-b border-rule bg-ground/95 backdrop-blur-sm">
-            <nav className="space-y-4 px-6 py-6">
+            <nav className="px-6 py-3">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block font-mono text-[12px] font-bold tracking-action text-ink-subtle transition-colors duration-200 hover:text-white"
+                  aria-current={item.id === activeId ? "true" : undefined}
+                  className={`flex min-h-11 items-center font-mono text-[12px] font-bold tracking-action transition-colors duration-200 ${
+                    item.id === activeId ? "text-ink" : "text-ink-subtle hover:text-ink"
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
