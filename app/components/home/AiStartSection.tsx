@@ -46,7 +46,7 @@ export default function AiStartSection() {
           <div className="relative z-10 mb-3.5 font-mono text-[12px] font-bold tracking-eyebrow text-ink-subtle">
             COMING SOON
           </div>
-          <h2 className="relative z-10 m-0 font-display text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+          <h2 className="relative z-10 m-0 font-display text-[clamp(32px,4vw,52px)] font-extrabold leading-none text-balance">
             SWIMVOLT
           </h2>
         </Reveal>

@@ -77,7 +77,7 @@ export default function HeroSection() {
       </button>
 
       <div className="relative z-[2] w-full px-12 pb-[88px]">
-        <h1 className="m-0 font-display text-[clamp(64px,13vw,180px)] font-extrabold leading-[0.86] tracking-[-0.01em] [text-shadow:0_4px_24px_rgba(0,0,0,0.5)]">
+        <h1 className="m-0 font-display text-[clamp(64px,13vw,180px)] font-extrabold leading-[0.86] text-balance tracking-[-0.01em] [text-shadow:0_4px_24px_rgba(0,0,0,0.5)]">
           CHRIS SWIMZZ
         </h1>
       </div>

@@ -80,7 +80,7 @@ export default function SponsorsSection() {
           <div className="relative z-10 mb-3.5 font-mono text-[12px] font-bold tracking-eyebrow text-ink-subtle">
             WHO BACKS THE JOURNEY
           </div>
-          <h2 className="relative z-10 m-0 font-display text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+          <h2 className="relative z-10 m-0 font-display text-[clamp(32px,4vw,52px)] font-extrabold leading-none text-balance">
             SPONSORS
           </h2>
         </Reveal>

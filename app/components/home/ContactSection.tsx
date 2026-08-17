@@ -52,7 +52,7 @@ export default function ContactSection() {
             <div className="relative z-10 mb-3.5 font-mono text-[12px] font-bold tracking-eyebrow text-ink-subtle">
               LET&apos;S TALK
             </div>
-            <h2 className="relative z-10 m-0 flex items-center gap-4 font-display text-[clamp(32px,4vw,52px)] font-extrabold leading-none">
+            <h2 className="relative z-10 m-0 flex items-center gap-4 font-display text-[clamp(32px,4vw,52px)] font-extrabold leading-none text-balance">
               GET IN TOUCH
               <span aria-hidden="true" className="text-ink-subtle">
                 →
