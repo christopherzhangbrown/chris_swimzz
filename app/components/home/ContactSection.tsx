@@ -5,6 +5,7 @@ import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Reveal } from "@/app/components/motion/Reveal"
+import { ACTION_PRIMARY, ACTION_ARROW } from "@/app/components/ui/actions"
 import GhostNumber from "./GhostNumber"
 
 const FIELD_CLASSNAME =
@@ -117,11 +118,11 @@ export default function ContactSection() {
                   className={`min-h-[100px] resize-none ${FIELD_CLASSNAME}`}
                 />
               </div>
-              <button
-                type="submit"
-                className="h-[52px] w-full rounded-full bg-white font-mono text-[13px] font-bold tracking-action text-ground transition-colors duration-300 hover:bg-white/85 sm:w-auto sm:px-8"
-              >
-                SEND MESSAGE →
+              <button type="submit" className={`group w-full sm:w-auto ${ACTION_PRIMARY}`}>
+                SEND MESSAGE
+                <span aria-hidden="true" className={ACTION_ARROW}>
+                  →
+                </span>
               </button>
               {success && (
                 <p role="status" className="text-[13px] text-white">

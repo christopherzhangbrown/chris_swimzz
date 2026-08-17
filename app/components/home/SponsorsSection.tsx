@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
+import { ACTION_ARROW } from "@/app/components/ui/actions"
 import GhostNumber from "./GhostNumber"
 
 const sponsors = [
@@ -119,8 +120,11 @@ export default function SponsorsSection() {
                     </div>
                   )}
                 </div>
-                <div className="shrink-0 font-mono text-[13px] font-bold tracking-action text-ink-subtle transition-colors duration-300 group-hover:text-white">
-                  VISIT →
+                <div className="shrink-0 font-mono text-[13px] font-bold tracking-action text-ink-subtle transition-colors duration-300 group-hover:text-ink">
+                  VISIT{" "}
+                  <span aria-hidden="true" className={ACTION_ARROW}>
+                    →
+                  </span>
                 </div>
               </a>
             </RevealItem>

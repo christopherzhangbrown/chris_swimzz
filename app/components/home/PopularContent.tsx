@@ -1,5 +1,6 @@
 import PopularContentCard from "./PopularContentCard"
 import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
+import { ACTION_SECONDARY, ACTION_ARROW } from "@/app/components/ui/actions"
 import GhostNumber from "./GhostNumber"
 
 const videos = [
@@ -41,9 +42,12 @@ export default function PopularContent() {
             href="https://www.instagram.com/chris_swimzz/"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-b border-rule-strong pb-1 font-mono text-[13px] font-bold tracking-action text-white/80 transition-colors duration-300 hover:border-white hover:text-white"
+            className={ACTION_SECONDARY}
           >
-            VIEW ALL ON INSTAGRAM →
+            VIEW ALL ON INSTAGRAM
+            <span aria-hidden="true" className={ACTION_ARROW}>
+              →
+            </span>
           </a>
         </Reveal>
 

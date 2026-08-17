@@ -5,6 +5,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { Input } from "@/components/ui/input"
 import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
+import { ACTION_PRIMARY, ACTION_ARROW } from "@/app/components/ui/actions"
 import GhostNumber from "./GhostNumber"
 
 export default function AiStartSection() {
@@ -70,12 +71,9 @@ export default function AiStartSection() {
                   required
                   className="h-auto w-full rounded-none border-0 border-b border-rule bg-transparent px-0 py-3 text-white placeholder:text-ink-faint focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-white focus-visible:shadow-[inset_0_-2px_0_0_white]"
                 />
-                <button
-                  type="submit"
-                  className="group flex items-center gap-3 font-mono text-[13px] font-bold tracking-action text-white"
-                >
+                <button type="submit" className={`group ${ACTION_PRIMARY}`}>
                   JOIN WAITLIST
-                  <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
+                  <span aria-hidden="true" className={ACTION_ARROW}>
                     →
                   </span>
                 </button>
