@@ -3,7 +3,7 @@ import StatBand from "./components/home/StatBand"
 import PopularContent from "./components/home/PopularContent"
 import AboutSection from "./components/home/AboutSection"
 import SponsorsSection from "./components/home/SponsorsSection"
-import AiStartSection from "./components/home/AiStartSection"
+import SwimVoltSection from "./components/home/SwimVoltSection"
 import ContactSection from "./components/home/ContactSection"
 
 export default function HomePage() {
@@ -15,7 +15,7 @@ export default function HomePage() {
         <AboutSection />
         <PopularContent />
         <SponsorsSection />
-        <AiStartSection />
+        <SwimVoltSection />
         <ContactSection />
       </div>
     </div>

@@ -3,9 +3,9 @@ import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Revea
 import { ACTION_PRIMARY, ACTION_ARROW } from "@/app/components/ui/actions"
 import GhostNumber from "./GhostNumber"
 
-export default function AiStartSection() {
+export default function SwimVoltSection() {
   return (
-    <section id="ai-start" className="scroll-mt-[76px] px-6 pb-[120px]">
+    <section id="swimvolt" className="scroll-mt-[76px] px-6 pb-[120px]">
       <div className="mx-auto max-w-[1280px]">
         <Reveal className="relative mb-10">
           <GhostNumber number="04" />
