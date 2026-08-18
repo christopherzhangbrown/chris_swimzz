@@ -1,43 +1,9 @@
-"use client"
-
-import type React from "react"
-import { useState } from "react"
 import Image from "next/image"
-import { Input } from "@/components/ui/input"
 import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Reveal"
 import { ACTION_PRIMARY, ACTION_ARROW } from "@/app/components/ui/actions"
-import { FIELD_CLASSNAME, FIELD_LABEL_CLASSNAME, EMAIL_PLACEHOLDER } from "@/app/components/ui/field"
 import GhostNumber from "./GhostNumber"
 
 export default function AiStartSection() {
-  const [email, setEmail] = useState("")
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [error, setError] = useState("")
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError("")
-    try {
-      const res = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      })
-      const data = await res.json()
-      if (data.ok) {
-        setIsSubmitted(true)
-        setEmail("")
-      } else {
-        setError(data.error || "Submission failed. Please try again.")
-      }
-    } catch {
-      setError("Submission failed. Please try again.")
-    }
-  }
-
   return (
     <section id="ai-start" className="scroll-mt-[76px] px-6 pb-[120px]">
       <div className="mx-auto max-w-[1280px]">
@@ -58,43 +24,17 @@ export default function AiStartSection() {
               what to change.
             </p>
 
-            {!isSubmitted ? (
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div>
-                  <label htmlFor="waitlist-email" className={FIELD_LABEL_CLASSNAME}>
-                    EMAIL
-                  </label>
-                  <Input
-                    id="waitlist-email"
-                    type="email"
-                    autoComplete="email"
-                    placeholder={EMAIL_PLACEHOLDER}
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className={FIELD_CLASSNAME}
-                  />
-                </div>
-                <button type="submit" className={`group ${ACTION_PRIMARY}`}>
-                  JOIN WAITLIST
-                  <span aria-hidden="true" className={ACTION_ARROW}>
-                    →
-                  </span>
-                </button>
-              </form>
-            ) : (
-              <p
-                role="status"
-                className="font-mono text-[13px] font-bold tracking-action text-ink"
-              >
-                You&apos;re on the list — we&apos;ll email you when it&apos;s ready.
-              </p>
-            )}
-            {error && (
-              <p role="alert" className="mt-3 text-[13px] text-red-400">
-                {error}
-              </p>
-            )}
+            <a
+              href="https://www.swimvolt.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`group ${ACTION_PRIMARY}`}
+            >
+              JOIN WAITLIST
+              <span aria-hidden="true" className={ACTION_ARROW}>
+                →
+              </span>
+            </a>
           </RevealItem>
 
           <RevealItem>
