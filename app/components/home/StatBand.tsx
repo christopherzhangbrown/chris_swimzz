@@ -7,7 +7,6 @@ export default function StatBand() {
   const sectionRef = useRef<HTMLElement>(null)
   const startedRef = useRef(false)
   const [followers, setFollowers] = useState(0)
-  const [views, setViews] = useState(0)
   const [years, setYears] = useState(0)
 
   useEffect(() => {
@@ -32,13 +31,12 @@ export default function StatBand() {
   const animateStats = () => {
     const duration = 1400
     const start = performance.now()
-    const targets = { followers: 20, views: 620, years: 12 }
+    const targets = { followers: 20, years: 12 }
 
     const tick = (now: number) => {
       const t = Math.min(1, (now - start) / duration)
       const ease = 1 - Math.pow(1 - t, 3)
       setFollowers(Math.round(targets.followers * ease))
-      setViews(Math.round(targets.views * ease))
       setYears(Math.round(targets.years * ease))
       if (t < 1) requestAnimationFrame(tick)
     }
@@ -54,14 +52,6 @@ export default function StatBand() {
           </div>
           <div className="mt-3 font-mono text-label font-medium tracking-eyebrow text-ink-subtle">
             INSTAGRAM FOLLOWERS
-          </div>
-        </RevealItem>
-        <RevealItem>
-          <div className="font-display text-[clamp(36px,4.5vw,52px)] font-extrabold leading-none text-ink">
-            {views}K<span className="text-ink-faint">+</span>
-          </div>
-          <div className="mt-3 font-mono text-label font-medium tracking-eyebrow text-ink-subtle">
-            TOTAL VIEWS ACROSS TOP CLIPS
           </div>
         </RevealItem>
         <RevealItem>
