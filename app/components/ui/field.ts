@@ -1,4 +1,4 @@
-// Shared field styling for the two forms on the page.
+// Shared field styling for the contact form.
 //
 // The label is visible, not sr-only. A placeholder disappears the moment
 // someone types, so on a three-field form a person who tabs away and back
@@ -10,6 +10,4 @@ export const FIELD_CLASSNAME =
 export const FIELD_LABEL_CLASSNAME =
   "mb-2 block font-mono text-label font-bold tracking-eyebrow text-ink-subtle"
 
-// One convention for the email placeholder. The waitlist form said
-// "you@email.com" and the contact form said "your.email@example.com".
 export const EMAIL_PLACEHOLDER = "you@example.com"
