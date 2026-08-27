@@ -3,6 +3,8 @@ import { Reveal, RevealStagger, RevealItem } from "@/app/components/motion/Revea
 import { ACTION_PRIMARY, ACTION_ARROW } from "@/app/components/ui/actions"
 import GhostNumber from "./GhostNumber"
 
+const SWIMVOLT_URL = "https://www.swimvolt.com"
+
 export default function SwimVoltSection() {
   return (
     <section id="swimvolt" className="scroll-mt-[76px] px-6 pb-[120px]">
@@ -10,27 +12,31 @@ export default function SwimVoltSection() {
         <Reveal className="relative mb-10">
           <GhostNumber number="04" />
           <div className="relative z-10 mb-3.5 font-mono text-[12px] font-bold tracking-eyebrow text-ink-subtle">
-            COMING SOON
+            <span className="inline-flex items-center gap-2 rounded-full border border-rule px-3 py-1 text-ink">
+              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-ink" />
+              NOW LIVE
+            </span>
           </div>
           <h2 className="relative z-10 m-0 font-display text-[clamp(32px,4vw,52px)] font-extrabold leading-none text-balance">
             SWIMVOLT
           </h2>
         </Reveal>
 
-        <RevealStagger className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,340px)_minmax(0,1fr)] lg:gap-14">
+        <RevealStagger className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)] lg:gap-14">
           <RevealItem>
             <p className="mb-8 text-[16px] leading-[1.7] text-ink-muted">
-              Film one racing start on your phone. SwimVolt reads it frame by frame and tells you
-              what to change.
+              I built the start analyzer I wanted as a swimmer, and it&apos;s out. Film one
+              racing start on your phone. SwimVolt tracks it frame by frame and shows you
+              exactly what to work on.
             </p>
 
             <a
-              href="https://www.swimvolt.com"
+              href={SWIMVOLT_URL}
               target="_blank"
               rel="noopener noreferrer"
               className={`group ${ACTION_PRIMARY}`}
             >
-              JOIN WAITLIST
+              VISIT SWIMVOLT.COM
               <span aria-hidden="true" className={ACTION_ARROW}>
                 →
               </span>
@@ -48,7 +54,7 @@ export default function SwimVoltSection() {
                 priority
               />
               <div className="pointer-events-none absolute right-4 top-4 rounded-full bg-ink px-3.5 py-1.5 font-mono text-label font-bold tracking-action text-ground">
-                WAITLIST OPEN
+                NOW LIVE
               </div>
               <p className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ground/70 to-transparent px-6 pb-4 pt-10 text-center font-mono text-label font-medium tracking-eyebrow text-ink">
                 FRAME-BY-FRAME START ANALYSIS
