@@ -1,9 +1,9 @@
 // Two action tiers, and only two.
 //
 // Primary is the white pill and belongs to the thing the section is asking
-// you to do: submit the contact form, join the waitlist. Secondary is mono
-// caps with a trailing arrow and belongs to navigation away from the page:
-// visit a sponsor, view the Instagram profile.
+// you to do: submit the contact form, analyze a start on SwimVolt. Secondary
+// is mono caps with a trailing arrow and belongs to navigation away from the
+// page: visit a sponsor, view the Instagram profile, read how SwimVolt works.
 //
 // Before this the two form submits looked nothing alike, and the weaker of
 // the two was on SwimVolt, the section with the most commercial intent.
