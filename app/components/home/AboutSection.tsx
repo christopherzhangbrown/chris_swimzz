@@ -31,18 +31,14 @@ export default function AboutSection() {
             </div>
             <div className="max-w-[560px] space-y-5 text-[16px] leading-[1.7] text-ink-muted">
               <p>
-                I&apos;m a Division 1 swimmer at Brown University and content creator sharing swimming insights with 20K+
-                followers.
+                I&apos;m a Division 1 swimmer at Brown. I&apos;ve been swimming for twelve years, starting in Charlotte
+                with Lifetime Swim.
               </p>
               <p>
-                My swimming journey began 12 years ago in Charlotte, North Carolina. What started as a fun activity
-                became a deep passion — swimming with Lifetime Swim and Ardrey Kell High School before taking it to the
-                next level at Brown.
-              </p>
-              <p>
-                It started simple: sharing race videos with friends on Instagram to save phone storage. Over time I
-                realized people loved the real, behind-the-scenes journey of a D1 swimmer — so I kept going. Now
-                swimming is more than a sport to me. It&apos;s a vehicle for growth, discipline, and community.
+                The Chris Swimzz account started off as storage for my races. I&apos;d post them so I could clear them
+                off my phone. Then one day I decided to try making something real out of it, and I kept going. It&apos;s
+                at 20K followers now. These days I show the whole thing: what it actually takes to swim D1 at Brown,
+                keep up with school, and build an app called SwimVolt.
               </p>
             </div>
           </RevealItem>
